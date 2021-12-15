@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/font-icon/themify-icons/themify-icons.css">
+    <title>2BMT MOTOR</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="leftmenu">
+            <div class="logo">
+                <img src="./assets/img/header/leftmenu logo.png" alt="2BMT"> 2BMT MOTOR
+            </div>
+            <ul>
+                <li >
+                    <img class="leftmenu-icon" src="./assets/img/admin/homeicon.png" alt="">
+                    <a href="#">Trang chủ</a>
+                </li>
+                <li >
+                    <img class="leftmenu-icon" src="./assets/img/admin/moto1.png" alt="">
+                    <a href="#">Sản phẩm</a>
+                </li>
+                <li >
+                    <img class="leftmenu-icon" src="./assets/img/admin/bill.png" alt="">
+                    <a href="#">Đơn hàng</a>
+                </li>
+                <li >
+                    <img class="leftmenu-icon" src="./assets/img/admin/people.png" alt="">
+                    <a href="#">Khách hàng</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div id="maincontent">
+            <div id="nav">
+                <div class="hello">
+                    Phạm Quang Minh
+                    <button > Đăng xuất</button>
+                </div>
+            </div> 
+            <div class="SP">
+                <div class="leftsection">
+                    <div class="maintable">
+                        <h1>DANH SÁCH ĐƠN HÀNG</h1>
+                        <table id="billlist">
+                            <tbody>
+                                <tr>
+                                    <th>NGÀY</th>
+                                    <th>KHÁCH HÀNG</th>
+                                    <th>GIÁ</th>
+                                    <th>TRẠNG THÁI</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">Không có đơn hàng nào</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="rightsection">
+                    <div class="subsection">
+                        <h1>TÌM KIẾM</h1>
+                        <form >
+                            <label for="name">Tên khách hàng</label>
+                            <input type="text" id="name">
+                            <label for="date">Ngày</label>
+                            <input type="date" id="date">
+                            <label for="status">Trạng thái</label>
+                            <select id="statussearch">
+                                <option value="Chưa xử lý">Chưa xử lý</option>
+                                <option value="Đã xử lý">Đã xử lý</option>
+                            </select>
+                            <button type="button">Tìm</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
