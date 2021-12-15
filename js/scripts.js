@@ -495,71 +495,79 @@ function showLogin() {
 	document.getElementById('signup').style.display = 'none';
 	document.getElementById('login').style.display = 'block';
 }
-document.getElementById('signup-form').addEventListener('submit', createUser);
-document.getElementById('login-form').addEventListener('submit', login);
+document.getElementById('signupform').addEventListener('submit', createUser);
+document.getElementById('loginform').addEventListener('submit', login);
+document.getElementById('user').addEventListener('click', closeForm);
+document.getElementById('loginform').addEventListener('click', function(event) {
+	event.stopPropagation();
+});
+document.getElementById('signupform').addEventListener('click', function(event) {
+	event.stopPropagation();
+});
+
 
 function createUser(e) {
 	e.preventDefault();
-	var fullName = document.getElementById('full-name');
+	var fullName = document.getElementById('fullname');
 	var address = document.getElementById('address');
 	var phone = document.getElementById('phone');
-	var username = document.getElementById('username-signup');
-	var password = document.getElementById('password-signup');
-	var password2 = document.getElementById('password-signup2');
+	var username = document.getElementById('usernameSignUp');
+	var password = document.getElementById('passwordSignUp');
+	var password2 = document.getElementById('passwordSignUp2');
 	var flag = true;
 	if (!fullName.value) {
-		document.getElementById('fullName-error').style.display = 'block';
+		document.getElementById('fullnameerror').style.display = 'block';
 		flag = false;
 	} else {
-		document.getElementById('fullName-error').style.display = 'none';
+		document.getElementById('fullnameerror').style.display = 'none';
 	}
 	if (!address.value) {
-		document.getElementById('address-error').style.display = 'block';
+		document.getElementById('addresserror').style.display = 'block';
 		flag = false;
 	} else {
-		document.getElementById('address-error').style.display = 'none';
+		document.getElementById('addresserror').style.display = 'none';
 	}
 	if (!phone.value) {
-		document.getElementById('phone-error').style.display = 'block';
+		document.getElementById('phoneerror').style.display = 'block';
 		flag = false;
 	} else {
 		if (isNaN(Number(phone.value))) {
-			document.getElementById('phone-error').style.display = 'block';
-			document.getElementById('phone-error').innerHTML = 'Số điện thoại không hợp lệ';
+			document.getElementById('phoneerror').style.display = 'block';
+			document.getElementById('phoneerror').innerHTML = 'Số điện thoại không hợp lệ';
 			flag = false;
 		} else {
 			if (Number(phone.value) < 100000000 || Number(phone.value) > 999999999) {
-				document.getElementById('phone-error').style.display = 'block';
-				document.getElementById('phone-error').innerHTML = 'Số điện thoại không đúng';
+				document.getElementById('phoneerror').style.display = 'block';
+				document.getElementById('phoneerror').innerHTML = 'Số điện thoại không đúng';
 				flag = false;
 			} else {
-				document.getElementById('phone-error').style.display = 'none';
+				document.getElementById('phoneerror').style.display = 'none';
 			}
 		}
 	}
 	if (!username.value) {
-		document.getElementById('user-error').style.display = 'block';
+		document.getElementById('usererror').style.display = 'block';
 		flag = false;
 	} else {
-		document.getElementById('user-error').style.display = 'none';
+		document.getElementById('usererror').style.display = 'none';
 	}
 	if (!password.value) {
-		document.getElementById('password-error').style.display = 'block';
+		document.getElementById('passworderror').style.display = 'block';
 		flag = false;
 	} else {
 		if (password.value.length < 8) {
-			document.getElementById('password-error').style.display = 'block';
-			document.getElementById('password-error').innerHTML = 'Mật khẩu phải trên 8 ký tự';
+			document.getElementById('passworderror').style.display = 'block';
+			document.getElementById('passworderror').innerHTML = 'Mật khẩu phải trên 8 ký tự';
 			flag = false;
 		} else {
-			document.getElementById('password-error').style.display = 'none';
+			document.getElementById('passworderror').style.display = 'none';
 		}
 	}
 	if (password2.value != password.value) {
-		document.getElementById('password-2-error').style.display = 'block';
+		document.getElementById('password2error').style.display = 'block';
 		flag = false;
 	} else {
-		document.getElementById('password-2-error').style.display = 'none';
+		document.getElementById('password2error').style.display = 'none';
 	}
 	if (flag == false) {
 		return false;
@@ -570,8 +578,8 @@ function createUser(e) {
 	var userArray = JSON.parse(localStorage.getItem('user'));
 	for (var i = 0; i < userArray.length; i++) {
 		if (user.username == userArray[i].username) {
-			document.getElementById('user-error').style.display = 'block';
-			document.getElementById('user-error').innerHTML = 'Tên đăng nhập đã có người sử dụng';
+			document.getElementById('usererror').style.display = 'block';
+			document.getElementById('usererror').innerHTML = 'Tên đăng nhập đã có người sử dụng';
 			username.focus();
 			return false;
 		}
@@ -584,20 +592,20 @@ function createUser(e) {
 
 function login(e) {
 	e.preventDefault();
-	var username = document.getElementById('username-login').value;
-	var password = document.getElementById('password-login').value;
+	var username = document.getElementById('usernameLogin').value;
+	var password = document.getElementById('passwordLogin').value;
 	var flag = true;
 	if (!username) {
-		document.getElementById('username-error').style.display = 'block';
+		document.getElementById('usernameerror').style.display = 'block';
 		flag = false;
 	} else {
-		document.getElementById('username-error').style.display = 'none';
+		document.getElementById('usernameerror').style.display = 'none';
 	}
 	if (!password) {
-		document.getElementById('password-login-error').style.display = 'block';
+		document.getElementById('passwordloginerror').style.display = 'block';
 		flag = false;
 	} else {
-		document.getElementById('password-login-error').style.display = 'none';
+		document.getElementById('passwordloginerror').style.display = 'none';
 	}
 	if (flag == false) {
 		return false;
@@ -607,25 +615,25 @@ function login(e) {
 		if (username == userArray[i].username) {
 			if (password == userArray[i].password) {
 				closeForm();
-				localStorage.setItem('user-login', JSON.stringify(userArray[i]));
+				localStorage.setItem('userlogin', JSON.stringify(userArray[i]));
 				window.location.reload(true);
 				return true;
 			}
 		}
 	}
-	document.getElementById('password-login-error').style.display = 'block';
-	document.getElementById('password-login-error').innerHTML = 'Sai thông tin đăng nhập';
+	document.getElementById('passwordloginerror').style.display = 'block';
+	document.getElementById('passwordloginerror').innerHTML = 'Sai thông tin đăng nhập';
 	return false;
 }
 function logout(url) {
-	localStorage.removeItem('user-login');
+	localStorage.removeItem('userlogin');
 	localStorage.removeItem('cart');
 	location.href = url;
 }
 
 function checkLogin() {
-	if (localStorage.getItem('user-login')) {
-		var user = JSON.parse(localStorage.getItem('user-login'));
+	if (localStorage.getItem('userlogin')) {
+		var user = JSON.parse(localStorage.getItem('userlogin'));
 		var s = '';
 		if (user.username == 'admin') {
 			s = '<li><button onClick="window.location.href=\'admin/product.html\'"><img src="images/icon/settings.svg"></button></li>' +
