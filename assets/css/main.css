@@ -205,6 +205,47 @@
     margin-right: 50px;
 }
 
+/* CHECK LOGIN */
+.header #navbar-list-bottom .nav-user button{
+	display: block;
+	background: none;
+	outline: none;
+	height: 25px;
+	text-align: center;
+	margin: 0 10px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 12pt;
+}
+
+.header #navbar-list-bottom #btnlogout{
+	background-color: #fff;
+	color: #000;
+	list-style-type: none;
+	text-align: center;
+	height: 25px;
+	width: 100px;
+	line-height: 25px;
+	font-weight: bold;
+	border-radius: 8px;
+	display: none;
+	cursor: pointer;
+	margin: 0 auto;
+	animation: bottomup 0.5s;
+	z-index: 100;
+	
+}
+
+.header #navbar-list-bottom li:hover > #btnlogout{
+	display: block;
+}
+
+.header #navbar-list-bottom li > #btnlogout:hover{
+	background-color: #ff4700;
+	color: #fff;
+}
+/* END CHECK LOGIN */
+
 
 /* MODAL BEGIN */
 .modal{
@@ -731,11 +772,14 @@
 	/* position: relative;
 	top: -80px;
 	left: 0; */
+    padding: 32px 0;
 }
+
 #main #maincontent{
 
 	background-color: #fff;
 }
+
 #main #product{
 	width: 100%;
 	display: flex;
@@ -743,6 +787,19 @@
 	justify-content: flex-start;
 	padding: 10px 10px 20px 0;
 }
+
+.text-center{
+    text-align: center;
+    
+}
+.ttt-1{
+    padding: 20px;
+    text-transform: uppercase;
+    color: black;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
 .card{
 	width: calc(25% - 10px);
 	height: 300px;
@@ -909,8 +966,8 @@
 	display: block;
 	height: 22px;
 	width: 22px;
-	background-color: #ff4700;
-	border: 2px solid #ff4700;
+	background-color: #000;
+	border: 2px solid #000;
 	text-decoration: none;
 	text-align: center;
 	line-height: 20px;
@@ -919,7 +976,7 @@
 }
 #main #page .pageNumber a:hover{
 	background-color: #fff;
-	color: #ff4700;
+	color: #000;
 }
 
 /* .group-product {
@@ -1569,6 +1626,26 @@ button {
     font-size: 14pt;
     cursor: pointer;
     box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 30%);
+}
+
+/*customalert*/
+#customalert {
+    visibility: hidden;
+    min-width: 250px;
+    color: #fff;
+    font-size: 14pt;
+    text-align: center;
+    border-radius: 2px;
+    padding: 20px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+#customalert.show {
+    visibility: visible;
+ 	animation: fadein 0.5s, fadeout 0.5s 3s;
 }
 
 /*animation*/
