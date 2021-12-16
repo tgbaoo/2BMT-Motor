@@ -14,24 +14,17 @@
     <title>2BMT MOTOR</title>
 </head>
     <body onLoad="showMenu();showProduct();checkLogin();">
-        <div class="main">
+
             <header class="header">
                 <nav class="navbar">
                     <ul id="navbar-list-top">
-                        <!-- <li class="navbar-item1"><a href="./index.html" class="logo"><img src="./assets/img/header/navLogo.PNG" alt="2BMT MOTOR"></a></li>
-                        <li class="navbar-item1"><a class="home" href="./index.html">Trang Chủ</a></li>
-                        <li class="navbar-item1"><a class="brand honda" href="/file/honda.html">Honda</a></li>
-                        <li class="navbar-item1"><a class="brand yamaha" href="/file/yamaha.html">Yamaha</a></li>
-                        <li class="navbar-item1"><a class="brand suzuki" href="/file/suzuki.html">Suzuki</a></li>
-                        <li class="navbar-item1"><a class="brand kawasaki" href="/file/kawasaki.html">Kawasaki</a></li> -->
                     </ul>
 
                     <ul id="navbar-list-bottom">
                         <li class="navbar-item2"><button onclick="showFormLogin()" class="login" href="">ĐĂNG NHẬP</button></li>
                         <li class="navbar-item2"><button onclick="showFormSignUp()" class="register" href="">ĐĂNG KÝ</button></li>
-                        <!-- <li class="navbar-item2"><div class="user-icon" href=""><i style="color: #ffffff; margin-left: -8px;font-size: 14px;" class="fas fa-user-edit"></i></div></li> -->
-                        <li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG</a></li>
-                        <li class="navbar-item2"><a class="shop-icon" href=""><i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>
+                        <li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>
+                        <li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>
                     </ul>
                 </nav>
             </header>
@@ -131,117 +124,41 @@
                         </div>
                     </form>
                 </div>
+
             </div>
-            <!-- <div class="modal-register" id="modal-register-wrapper">
-            <div class="modal-register-overlay"></div>
-            <div class="modal-register-body">       
-                <div class="auth-form">
-                    <div class="auth-container">
-                        <div class="auth-header">
-                            <span href="" class="auth-heading">Đăng Ký</span>
-                                <button onclick="document.getElementById('modal-login-wrapper').style.display='flex';
-                                                document.getElementById('modal-register-wrapper').style.display='none'"            
-                                href="" class="auth-switch" id="switch-to-login">Đăng nhập</button>
+    <!----------------------SEARCH SECTION BEGIN ---------------------------->
+            <div id="searchsection">
+                <div class="container">
+                    <div class="close" onClick="closeSearch()">+</div>
+                    <div class="searchbox">
+                        <input type="text" placeholder="Tìm kiếm" id="search" onKeyUp="search()"><button onClick="showExtend()"><img src="./assets/img/icon/arrow.svg"></button>
+                    </div>
+                    <div id="searchextend" class="">
+                        <div>
+                            <select id="brandsearch" onchange="search()">
+                                <option value="all" selected>TẤT CẢ</option>
+                                <option value="adidas">ADIDAS</option>
+                                <option value="nike">NIKE</option>
+                                <option value="gucci">GUCCI</option>
+                                <option value="balenciaga">BALENCIAGA</option>
+                            </select>
                         </div>
-        
-                <div class="auth-form_form">
-                    <div class="auth-form_group">
-                        <input type="text" class="auth-form_input" placeholder="Nhập tài khoản đăng ký">
+                        <div> <input type="text" id="priceform" onchange="search()" placeholder="Giá từ"> &mdash; <input type="text" id="priceto" onchange="search()" placeholder="Đến"></div>
                     </div>
-                    <div class="auth-form_group">
-                        <input type="password" class="auth-form_input" placeholder="Nhập mật khẩu của bạn">
-                    </div>
-                    <div class="auth-form_group">
-                        <input type="password" class="auth-form_input" placeholder="Nhập lại mật khẩu của bạn">
-                    </div>
-                </div>
-        
-                <div class="auth-more">
-                    <p class="auth-policy-text">
-                        Bằng việc đăng ký tài khoản, bạn đã đồng ý với 2BMT MOTOR về
-                        <a class="auth-policy-link" href="">Điều khoản dịch vụ</a> và
-                        <a href="" class="auth-policy-link">Chính sách bảo mật</a>.
-                    </p>
-                </div>
-        
-                <div class="auth-controls">
-                    <a href="" class="auth-btn btn_back">TRỞ LẠI</a>
-                    <a href="" class="auth-btn btn_primary">ĐĂNG KÝ</a>
+                    <div id="searchresult"></div>
                 </div>
             </div>
-            <div class="auth-social">
-                <a href="" class=" social-btn btn-facebook">
-                    <i class="social-icon fab fa-facebook"></i>
-                    <span class="social-title facebook-title">
-                    Kết nối với Facebook
-                    </span>
-                </a>
-                <a href="" class=" social-btn btn-google">
-                    <i class="social-icon fab fa-google"></i>
-                    <span class="social-title google-title">
-                    Kết nối với Google
-                    </span>
-                </a>
-            </div> -->
-            <!-- </div>
-            </div>
-            </div> -->
-            <!--------------------------------------------------LOGIN FORM -------------------------------------------------------->
-            <!-- <div class="modal-login" id="modal-login-wrapper">
-                <div class="modal-login-overlay"></div>
-                    <div class="modal-login-body">       
-                        <div class="auth-form">
-                            <div class="auth-container">
-                                <div class="auth-header">
-                                    <span href="" class="auth-heading">Đăng Nhập</span>
-                                    <button onclick="document.getElementById('modal-register-wrapper').style.display='flex';
-                                                    document.getElementById('modal-login-wrapper').style.display='none'"
-                                    href="" class="auth-switch" id="switch-to-register">Đăng Ký</button>
-                                </div>
 
-                                <div class="auth-form_form">
-                                    <div class="auth-form_group">
-                                        <input type="text" class="auth-form_input" placeholder="Nhập tài khoản của bạn">
-                                    </div>
-                                    <div class="auth-form_group">
-                                        <input type="password" class="auth-form_input" placeholder="Nhập mật khẩu của bạn">
-                                    </div>
-                                </div>
+		<!------------------------SEARCH SECTION END --------------------------->
 
-                                <div class="auth-more">
-                                    <div class="auth-help">
-                                        <a href="" class="auth-help_link">Quên mật khẩu?</a>
-                                    </div>
-                                </div>
 
-                                <div class="auth-controls">
-                                    <a href="" class="auth-btn btn_back">TRỞ LẠI</a>
-                                    <a href="" class="auth-btn btn_primary">ĐĂNG NHẬP</a>
-                                </div>
-                            </div>
 
-                            <div class="auth-social">
-                                <a href="" class=" social-btn btn-facebook">
-                                    <i class="social-icon fab fa-facebook"></i>
-                                    <span class="social-title facebook-title">
-                                    Kết nối với Facebook
-                                    </span>
-                                </a>
-                                <a href="" class=" social-btn btn-google">
-                                    <i class="social-icon fab fa-google"></i>
-                                    <span class="social-title google-title">
-                                    Kết nối với Google
-                                    </span>
-                                </a>
-                            </div>
-                    </div>
-                </div>
-            </div> -->
+        
             <!-- ---------------------------SLIDER-------------------------- -->
             <div id="slider">
                 <div class="content">
                     <div class="item">
-                        <a href="" class="slider-link">
+                        <a href="index.html?kawasaki&0" class="slider-link">
                             <div class="slider-img kawasaki">
                                 <div class="slider-content">
                                     <h3 class="slider-header">KAWASAKI</h3>
@@ -252,7 +169,7 @@
                         
                     </div>
                     <div class="item">
-                        <a href="" class="slider-link">
+                        <a href="index.html?honda&0" class="slider-link">
                             <div class="slider-img honda">
                                 <div class="slider-content">
                                     <h3 class="slider-header">HONDA</h3>
@@ -265,7 +182,7 @@
 
                 <div class="content">
                     <div class="item">
-                        <a href="" class="slider-link">
+                        <a href="index.html?yamaha&0" class="slider-link">
 
                             <div class="slider-img yamaha">
                                 <div class="slider-content">
@@ -280,7 +197,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="" class="slider-link">
+                        <a href="index.html?suzuki&0" class="slider-link">
                             <div class="slider-img suzuki">
                                 <div class="slider-content">
                                     <h3 class="slider-header">
@@ -298,22 +215,60 @@
 
             <!-- --------------------------CONTENT----------------------- -->
 
-            <div id ="content">
-                <div class="group-product pt15">
+            <div id="main">
+                <div class="container" id="maincontent">
+                    <div id="product">
+                        <!-- Product -->
+                    </div>
+                    <div id="productInfo" class="modal">
+                        <div id="info">
+                            <button type="button" class="close" onClick="closeProductInfo()">+</button>
+                            <div class="left">
+                                <img id="imgbig" src="">
+                            </div>
+                            <div class="right">
+                                <h2 id="productname"></h2>
+                                <h4 id="productprice"></h4>
+                                <h4>SIZE</h4>
+                                <select id="size">
+                                    <option value="36" selected>36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                </select>
+                                <h4>Số lượng</h4>
+                                <button class="quantitydown" onClick="quantitydown()">-</button><input type="text" id="quantity" value="1"><button class="quantityup" onClick="quantityup()">+</button>
+                                <button class="addtocart" onclick="addToCart()">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page"></div>
+                </div>
+            </div>  
 
+
+
+
+
+            <!-- <div id ="content">
+                <div class="group-product pt15">
                     <div class="contentder">
-                    <div class="background-overlay">
-            
-                        <div class="ttt-1 text-center">sản phẩm bán chạy nhất</div>
-                        <div class="row-product">
-                        <div>
+                        <div class="background-overlay">
+                            <div class="ttt-1 text-center">sản phẩm bán chạy nhất</div>
+                                <div class="row-product">
+                            <div>
                             <div class="item-product col-third">
                                 <img src="./assets/img/content/xe1.jpg" alt="KAWASAKI" class="product-img">    
                                 <div class="product-name">KAWASAKI</div>
                                 <div class="mt10 fw5"> KAWASAKI Z 650 SE ABS 2021 </div>
                                 <div class="mt3">190.000.000 VNĐ</div>
                             </div>
-                        </div>
+                   
                         <div>
                             <div class="item-product col-third">
                                 <img src="./assets/img/content/xe2.jpg" alt="KAWASAKI" class="product-img">    
@@ -374,7 +329,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
             <div id="contact">
                 <div class="item">
                     <p><i class ="ti-credit-card"></i></p>
@@ -430,7 +385,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         <div id="customAlert"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="./js/scripts.js"></script>

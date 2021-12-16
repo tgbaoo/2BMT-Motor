@@ -160,8 +160,8 @@ function deleteUser(username) {
 
 function searchProduct() {
     var productArray = JSON.parse(localStorage.getItem('product'));
-    var name = document.getElementById('search-product-name').value.toLowerCase();
-    var brand = document.getElementById('search-product-brand').value.toLowerCase();
+    var name = document.getElementById('searchproductname').value.toLowerCase();
+    var brand = document.getElementById('searchproductbrand').value.toLowerCase();
     var s = '<tr><th>#ID</th><th>Ảnh</th><th>TÊN SẢN PHẨM</th><th>THƯƠNG HIỆU</th><th>GIÁ</th><th>Xóa</th></tr>';
     if(brand == 'all') {
         if(!name) {

@@ -48,44 +48,44 @@ function showMenuMobile() {
 function createProduct() {
 	if (localStorage.getItem('product') === null) {
 		var productArray = [
-			{ productId: 10042, brand: 'honda', img: '../assets/img/product/honda/Honda CBR150R 2021.jpg', name: 'Honada CBR150R 2021', price: 72490000 },
-			{ productId: 10040, brand: 'honda', img: '../assets/img/product/honda/Honda CBR250RR 2021.jpg', name: 'Honada CBR250RR 2021', price: 160000000 },
-			{ productId: 10039, brand: 'honda', img: '../assets/img/product/honda/Honda Rebel 300.jpg', name: 'Honada Rebel 300', price: 124000000 },
-			{ productId: 10033, brand: 'honda', img: '../assets/img/product/honda/Honda CB500F.jpg', name: 'Honada CB500F', price: 177500000 },
-			{ productId: 10032, brand: 'honda', img: '../assets/img/product/honda/Honda CBR600RR HRC MotoGP.jpg', name: 'Honada CBR600RR HRC MotoGP', price: 720000000 },
-			{ productId: 10025, brand: 'honda', img: '../assets/img/product/honda/Honda Shadow Aero 750 ABS.jpg', name: 'Honada Shadow Aero 750 ABS', price: 475000000 },
-			{ productId: 10024, brand: 'honda', img: '../assets/img/product/honda/Honda CBR1000RR SP2.jpg', name: 'Honada CBR1000RR SP2', price: 950000000 },
-			{ productId: 10020, brand: 'honda', img: '../assets/img/product/honda/Honda Rebel 1100 DTC.jpg', name: 'Honada Rebel 1100 DTC', price: 620000000 },
+			{ productId: 10042, brand: 'honda', img: './assets/img/product/honda/Honda CBR150R 2021.jpg', name: 'Honda CBR150R 2021', price: 72490000 },
+			{ productId: 10040, brand: 'honda', img: './assets/img/product/honda/Honda CBR250RR 2021.jpg', name: 'Honda CBR250RR 2021', price: 160000000 },
+			{ productId: 10039, brand: 'honda', img: './assets/img/product/honda/Honda Rebel 300.jpg', name: 'Honda Rebel 300', price: 124000000 },
+			{ productId: 10033, brand: 'honda', img: './assets/img/product/honda/Honda CB500F.jpg', name: 'Honda CB500F', price: 177500000 },
+			{ productId: 10032, brand: 'honda', img: './assets/img/product/honda/Honda CBR600RR HRC MotoGP.jpg', name: 'Honda CBR600RR HRC MotoGP', price: 720000000 },
+			{ productId: 10025, brand: 'honda', img: './assets/img/product/honda/Honda Shadow Aero 750 ABS.jpg', name: 'Honda Shadow Aero 750 ABS', price: 475000000 },
+			{ productId: 10024, brand: 'honda', img: './assets/img/product/honda/Honda CBR1000RR SP2.jpg', name: 'Honda CBR1000RR SP2', price: 950000000 },
+			{ productId: 10020, brand: 'honda', img: './assets/img/product/honda/Honda Rebel 1100 DTC.jpg', name: 'Honda Rebel 1100 DTC', price: 620000000 },
 			// {productId:10021, brand:'honda',    img:'../assets/img/', name:'Honada ' , price:10255000},
 			// {productId:10017, brand:'honda',    img:'../assets/img/', name:'Honada ' , price:10375000},
-			{ productId: 10041, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki GSX-R150.jpg', name: 'Suzuki GSX-R150', price: 71990000 },
-			{ productId: 10035, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki GIXXER SF250.jpg', name: 'Suzuki GIXXER SF250', price: 125900000 },
-			{ productId: 10034, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki-GSX-R750.jpg', name: 'Suzuki-GSX-R750', price: 290000000 },
-			{ productId: 10027, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki GSXR1000 ABS Special Edittion.jpg', name: 'Suzuki GSXR1000 ABS Special Edittion', price: 880000000 },
-			{ productId: 10026, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki GSX-S1000.jpg', name: 'Suzuki GSX-S1000', price: 399900000 },
-			{ productId: 10018, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki V-STROM 1050ABS.jpg', name: 'Suzuki V-STROM 1050ABS', price: 419000000 },
-			{ productId: 10019, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki Hayabusa 2018.jpg', name: 'Suzuki Hayabusa 2018', price: 494000000 },
-			{ productId: 10010, brand: 'suzuki', img: '../assets/img/product/suzuki/Suzuki Boulevard C90T.jpg', name: 'Suzuki Boulevard C90T', price: 400000000 },
+			{ productId: 10041, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki GSX-R150.jpg', name: 'Suzuki GSX-R150', price: 71990000 },
+			{ productId: 10035, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki GIXXER SF250.jpg', name: 'Suzuki GIXXER SF250', price: 125900000 },
+			{ productId: 10034, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki-GSX-R750.jpg', name: 'Suzuki-GSX-R750', price: 290000000 },
+			{ productId: 10027, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki GSXR1000 ABS Special Edittion.jpg', name: 'Suzuki GSXR1000 ABS Special Edittion', price: 880000000 },
+			{ productId: 10026, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki GSX-S1000.jpg', name: 'Suzuki GSX-S1000', price: 399900000 },
+			{ productId: 10018, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki V-STROM 1050ABS.jpg', name: 'Suzuki V-STROM 1050ABS', price: 419000000 },
+			{ productId: 10019, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki Hayabusa 2018.jpg', name: 'Suzuki Hayabusa 2018', price: 494000000 },
+			{ productId: 10010, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki Boulevard C90T.jpg', name: 'Suzuki Boulevard C90T', price: 400000000 },
 			// {productId:10003, brand:'suzuki',    img:, name: , price:2949000},
 			// {productId:10002, brand:'suzuki',    img:, name: , price:5350000},
-			{ productId: 10038, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha YB 125 SP.jpg', name: 'Yamaha YB 125 SP', price: 43000000 },
-			{ productId: 10037, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha V-Star 250.jpg', name: 'Yamaha V-Star 250', price: 280000000 },
-			{ productId: 10031, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha YZF-R6.jpg', name: 'Yamaha YZF-R6', price: 283000000 },
-			{ productId: 10030, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha XSR700.jpg', name: 'Yamaha XSR700', price: 197000000 },
-			{ productId: 10023, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha R7.jpg', name: 'Yamaha R7', price: 480000000 },
-			{ productId: 10022, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha Bolt R950.jpg', name: 'Yamaha Bolt R950', price: 420000000 },
-			{ productId: 10015, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha MT10.jpg', name: 'Yamaha MT10', price: 623000000 },
-			{ productId: 10014, brand: 'yamaha', img: '../assets/img/product/yamaha/Yamaha YZF-R1.jpg', name: 'Yamaha YZF-R1', price: 638000000 },
+			{ productId: 10038, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha YB 125 SP.jpg', name: 'Yamaha YB 125 SP', price: 43000000 },
+			{ productId: 10037, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha 250 V-Star.jpg', name: 'Yamaha V-Star 250', price: 280000000 },
+			{ productId: 10031, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha YZF-R6.jpg', name: 'Yamaha YZF-R6', price: 283000000 },
+			{ productId: 10030, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha XSR700.jpg', name: 'Yamaha XSR700', price: 197000000 },
+			{ productId: 10023, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha R7.jpg', name: 'Yamaha R7', price: 480000000 },
+			{ productId: 10022, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha Bolt R950.jpg', name: 'Yamaha Bolt R950', price: 420000000 },
+			{ productId: 10015, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha MT10.jpg', name: 'Yamaha MT10', price: 623000000 },
+			{ productId: 10014, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha YZF-R1.jpg', name: 'Yamaha YZF-R1', price: 638000000 },
 			// {productId:10006, brand:'yamaha',    img:, name: , price:17099000},
 			// {productId:10007, brand:'yamaha',    img:, name: , price:15600000},
-			{ productId: 10036, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki W175 SE.jpg', name: 'Kawasaki W175 SE', price: 69500000 },
-			{ productId: 10029, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki Ninja ZX25R ABS KRT EDITTION.jpg', name: 'Kawasaki Ninja ZX25R ABS KRT EDITTION', price: 189000000 },
-			{ productId: 10028, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki Ninja 400 ABS.jpg', name: 'Kawasaki Ninja 400 ABS', price: 162000000 },
-			{ productId: 10013, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki Vulcan S 650.jpg', name: 'Kawasaki Vulcan S 650', price: 239000000 },
-			{ productId: 10012, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki Z900 ABS.jpg', name: 'Kawasaki Z900 ABS', price: 288000000 },
-			{ productId: 10005, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki ZH2.jpg', name: 'Kawasaki ZH2', price: 690000000 },
-			{ productId: 10004, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki ZX10R ABS.jpg', name: 'Kawasaki ZX10R ABS', price: 571000000 },
-			{ productId: 10004, brand: 'kawasaki', img: '../assets/img/product/kawasaki/Kawasaki Z1000 ABS.jpg', name: 'Kawasaki Z1000 ABS', price: 412000000 },
+			{ productId: 10036, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki W175 SE.jpg', name: 'Kawasaki W175 SE', price: 69500000 },
+			{ productId: 10029, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki Ninja ZX25R ABS KRT EDITION.png', name: 'Kawasaki Ninja ZX25R ABS KRT EDITTION', price: 189000000 },
+			{ productId: 10028, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki Ninja 400 ABS.jpg', name: 'Kawasaki Ninja 400 ABS', price: 162000000 },
+			{ productId: 10013, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki Vulcan S 650.jpg', name: 'Kawasaki Vulcan S 650', price: 239000000 },
+			{ productId: 10012, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki Z900 ABS.jpg', name: 'Kawasaki Z900 ABS', price: 288000000 },
+			{ productId: 10005, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki ZH2.jpg', name: 'Kawasaki ZH2', price: 690000000 },
+			{ productId: 10004, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki ZX10R ABS.jpg', name: 'Kawasaki ZX10R ABS', price: 571000000 },
+			{ productId: 10004, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki Z1000 ABS.jpg', name: 'Kawasaki Z1000 ABS', price: 412000000 },
 			// {productId:10004, brand:'kawasaki',    img:, name: , price:17020000},
 			// {productId:10004, brand:'kawasaki',    img:, name: , price:17020000},
 			//-----------------------------------------------------------------------------------------
@@ -118,8 +118,6 @@ function showProduct() {
 		for (var i = pos; i < productArray.length; i++) {
 			s += '<div class="card">' +
 				'<img src="' + productArray[i].img + '">' +
-				'<p>' + productArray[i].name + '</p>' +
-				'<p> Price: ' + currency(productArray[i].price) + '</p>' +
 				'<button class="btn" onClick="showProductInfo(' + productArray[i].productId + ')">Chi tiết</button></div>';
 			count++;
 			if (count == 12)
@@ -127,10 +125,10 @@ function showProduct() {
 		}
 		pageNum = Math.ceil(productArray.length / 12);
 		var link = '';
-		for (var i = 1; i <= sotrang; i++) {
+		for (var i = 1; i <= pageNum; i++) {
 			pos = (i - 1) * 12;
 			var a = '<a href="index.html?all&' + pos + '">' + i + '</a>';
-			link += '<div class="page-number">' + a + '</div>';
+			link += '<div class="pageNumber">' + a + '</div>';
 		}
 		document.getElementById('page').innerHTML = link;
 	}
@@ -160,7 +158,7 @@ function showProduct() {
 		for (var i = 1; i <= pageNum; i++) {
 			pos = (i - 1) * 8;
 			var a = '<a href="index.html?' + brand + '&' + pos + '">' + i + '</a>';
-			link += '<div class="page-number">' + a + '</div>';
+			link += '<div class="pageNumber">' + a + '</div>';
 		}
 		document.getElementById('page').innerHTML = link;
 	}
@@ -172,12 +170,12 @@ function showProductInfo(productId) {
 	var productArray = JSON.parse(localStorage.getItem('product'));
 	for (var i = 0; i < productArray.length; i++) {
 		if (productArray[i].productId == productId) {
-			document.getElementById('product-name').innerHTML = productArray[i].name;
-			document.getElementById('product-price').innerHTML = 'Giá: ' + currency(productArray[i].price);
-			document.getElementById('img-big').src = productArray[i].img;
+			document.getElementById('productname').innerHTML = productArray[i].name;
+			document.getElementById('productprice').innerHTML = 'Giá: ' + currency(productArray[i].price);
+			document.getElementById('imgbig').src = productArray[i].img;
 			document.getElementById('size').value = 36;
 			document.getElementById('quantity').value = 1;
-			document.querySelector('#info .right button.add-to-cart').setAttribute('onClick', 'addToCart(' + productId + ')');
+			document.querySelector('#info .right button.addtocart').setAttribute('onClick', 'addToCart(' + productId + ')');
 		}
 	}
 }
@@ -187,8 +185,6 @@ function closeProductInfo() {
 }
 
 /*END PRODUCT*/
-
-
 
 
 /*CART*/
@@ -223,8 +219,8 @@ function addToCart(productId) {
 function showCartTable() {
 	if (localStorage.getItem('cart') === null || localStorage.getItem('cart') == '[]') {
 		var s = '<tr><th>Không có sản phẩm nào trong giỏ hàng</th></tr>';
-		document.getElementById('cart-table').innerHTML = s;
-		document.getElementById('total-price').innerHTML = 0;
+		document.getElementById('carttable').innerHTML = s;
+		document.getElementById('totalprice').innerHTML = 0;
 	} else {
 		var cartArray = JSON.parse(localStorage.getItem('cart'));
 		var s = '<tr><th></th><th>Sản phẩm</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr>';
@@ -247,8 +243,8 @@ function showCartTable() {
 				'</tr>';
 			totalPrice += cartArray[i].price * cartArray[i].quantity;
 		}
-		document.getElementById('cart-table').innerHTML = s;
-		document.getElementById('total-price').innerHTML = currency(totalprice);
+		document.getElementById('carttable').innerHTML = s;
+		document.getElementById('totalprice').innerHTML = currency(totalprice);
 	}
 }
 
@@ -314,7 +310,7 @@ function quantityUp2(id) {
 }
 
 function buy() {
-	if (localStorage.getItem('user-login') === null) {
+	if (localStorage.getItem('userlogin') === null) {
 		customAlert('Bạn phải đăng nhập để mua sản phẩm', 'warning');
 		return false;
 	}
@@ -328,7 +324,7 @@ function buy() {
 		info += cartArray[i].quantity + ' x ' + cartArray[i].name + ' size ' + cartArray[i].size + '; ';
 		totalPrice += cartArray[i].quantity * cartArray[i].price;
 	}
-	var customer = JSON.parse(localStorage.getItem('user-login'));
+	var customer = JSON.parse(localStorage.getItem('userlogin'));
 	var date = new Date();
 	var d = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
 	if (localStorage.getItem('bill') === null) {
@@ -359,7 +355,7 @@ function showBill() {
 		for (var i = 0; i < billArray.length; i++) {
 			if (user.username == billArray[i].customer.username) {
 				document.getElementById('bill').style.display = 'block';
-				s += '<div class="bill-content">' +
+				s += '<div class="billcontent">' +
 					'<div>' + billArray[i].info + '</div>' +
 					'<div>' + currency(billArray[i].totalPrice) + '</div>' +
 					'<div>' + billArray[i].date + '</div>' +
@@ -375,19 +371,19 @@ function showBill() {
 /*SEARCH*/
 function showSearch() {
 
-	document.getElementById('search-section').style.display = 'block';
+	document.getElementById('searchsection').style.display = 'block';
 }
 
 function closeSearch() {
 
-	document.getElementById('search-section').style.display = 'none';
+	document.getElementById('searchsection').style.display = 'none';
 }
 
 function search() {
 	var productSearch = document.getElementById('search').value.toLowerCase();
 	var productArray = JSON.parse(localStorage.getItem('product'));
 	var s = '';
-	if (document.getElementById('search-extend').className == '') {
+	if (document.getElementById('searchextend').className == '') {
 		for (var i = 0; i < productArray.length; i++) {
 			if ((productArray[i].name.toLowerCase().search(productSearch) != -1 || productArray[i].brand.toLowerCase().search(productSearch) != -1) && productSearch != '') {
 				s += '<div class="card">' +
@@ -399,9 +395,9 @@ function search() {
 		}
 	}
 	else {
-		var brandSearch = document.getElementById('brand-search').value;
-		var priceForm = document.getElementById('price-form').value;
-		var priceTo = document.getElementById('price-to').value;
+		var brandSearch = document.getElementById('brandsearch').value;
+		var priceForm = document.getElementById('priceform').value;
+		var priceTo = document.getElementById('priceto').value;
 		if (brandSearch == 'all') {
 			for (var i = 0; i < productArray.length; i++) {
 				if (productArray[i].name.toLowerCase().search(productSearch) != -1 && productArray[i].price >= priceForm && productArray[i].price <= priceTo) {
@@ -426,32 +422,32 @@ function search() {
 		}
 
 	}
-	document.getElementById('search-result').innerHTML = s;
+	document.getElementById('searchresult').innerHTML = s;
 }
 
 function showExtend() {
-	if (document.getElementById('search-extend').className == '') {
-		document.getElementById('search-extend').classList.add('active')
-		document.querySelector('#search-section .search-box button img').src = 'images/icon/arrow2.svg';
+	if (document.getElementById('searchextend').className == '') {
+		document.getElementById('searchextend').classList.add('active')
+		document.querySelector('#searchsection .searchbox button img').src = './assets/img/icon/arrow2.svg';
 	}
 	else {
-		document.getElementById('search-extend').classList.remove('active');
-		document.querySelector('#search-section .search-box button img').src = 'images/icon/arrow.svg';
-		var priceForm = document.getElementById('price-form').value = "";
-		var priceTo = document.getElementById('price-to').value = "";
+		document.getElementById('searchextend').classList.remove('active');
+		document.querySelector('#searchsection .searchbox button img').src = './assets/img/icon/arrow.svg';
+		var priceForm = document.getElementById('priceform').value = "";
+		var priceTo = document.getElementById('priceto').value = "";
 	}
 }
 
 function showExtend2() {
-	if (document.getElementById('search-extend').className == '') {
-		document.getElementById('search-extend').classList.add('active')
-		document.querySelector('#search-section .search-box button img').src = '../images/icon/arrow2.svg';
+	if (document.getElementById('searchextend').className == '') {
+		document.getElementById('searchextend').classList.add('active')
+		document.querySelector('#searchsection .searchbox button img').src = './assets/img/icon/arrow2.svg';
 	}
 	else {
-		document.getElementById('search-extend').classList.remove('active');
-		document.querySelector('#search-section .search-box button img').src = '../images/icon/arrow.svg';
-		var priceForm = document.getElementById('price-form').value = "";
-		var priceTo = document.getElementById('price-to').value = "";
+		document.getElementById('searchextend').classList.remove('active');
+		document.querySelector('#searchsection .searchbox button img').src = './assets/img/icon/arrow.svg';
+		var priceForm = document.getElementById('priceform').value = "";
+		var priceTo = document.getElementById('priceto').value = "";
 	}
 }
 /*END SEARCH*/
@@ -684,47 +680,6 @@ function customAlert(message, type) {
 }
 
 
-//Banner begin
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-	var i;
-	var slides = document.getElementsByClassName("slide-show");
-	//var dots = document.getElementsByClassName("dot");
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";
-	}
-	slideIndex++;
-	if (slideIndex > slides.length) { slideIndex = 1 }
-	/*for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
-	}*/
-	slides[slideIndex - 1].style.display = "block";
-	//dots[slideIndex-1].className += " active";
-	setTimeout(showSlides, 3000);
-}
-//Banner end
 
 
-// // MODAL
-// var modal = document.getElementById('modal-register-wrapper');
-// window.onclick = function (event) {
-// 	if (event.target == modal) {
-// 		modal.style.display = "none"
-// 	}
-// }
 
-// var modal = document.getElementById('modal-login-wrapper');
-// window.onclick = function (event) {
-// 	if (event.target == modal) {
-// 		modal.style.display = "none"
-// 	}
-// }
-
-// var modal = document.getElementById('switch-to-login');
-// window.onclick = function (event) {
-// 	if (event.target == modal) {
-// 		modal.style.display = "none"
-// 	}
-// }

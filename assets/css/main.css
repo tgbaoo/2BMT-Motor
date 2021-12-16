@@ -1,6 +1,10 @@
-.main {
 
+.container{
+	width: 1200px;
+	margin: 0 auto;
 }
+
+
 /* header */
 .header{
     width: 100%;
@@ -151,7 +155,7 @@
 }
 
 .navbar-item2 .login, .register, .shopping,
- .user-icon, .shop-icon{
+ .user-icon, .shop-icon, .search-icon{
     text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
@@ -196,7 +200,7 @@
     margin-left: 1px;
 }
 
-.navbar-item2 .shop-icon{
+.navbar-item2 .shop-icon, .search-icon{
     margin-left: -8px;
     margin-right: 50px;
 }
@@ -508,6 +512,7 @@
     color: #000;
 }
 
+
 .btn-google:hover,
 .btn-google:hover i,
 .btn-google:hover span {
@@ -515,229 +520,108 @@
     color: #fff;
 }
 
-/* 
-.btn-facebook:hover,
-.facebook-title:hover{
-    color: #000;
-} */
-
-/* MODAL END */
-
-/* Modal-Register */
-
-/* .modal-register{
-    position: fixed;
-    display: none;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    animation: fadeIn linear 0.4s;
-    z-index: 1;
-}
-
-.modal-register-overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-register-body{
-    --growth-from: 0.6;
-    --growth-to: 1;
-    margin: auto;
-    z-index: 1;
-    animation: growth linear 0.15s ;
-} */
-
-/* Modal-Login */
-
-/* .modal-login{
-    position: fixed;
-    display: none;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    animation: fadeIn linear 0.4s;
-    z-index: 1;
-}
-
-.modal-login-overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-login-body{
-    --growth-from: 0.6;
-    --growth-to: 1;
-    margin: auto;
-    z-index: 1;
-    animation: growth linear 0.15s ;
-} */
-
-
-/* Authen Form */
-
-/* .navbar-item1 .nav-log-in4{
-    text-decoration: none;
-    color: #999999;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 14px;
-}
-
-.auth-form{
-    width: 500px;
-    border-radius: 5px;
-    background-color: #ffffff;
-    overflow: hidden;
-    padding: 20px;
-}
-
-.auth-container{
+/*Search*/
+#navbar-list-bottom .search-btn{
     padding: 0 32px;
+
 }
 
-.auth-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    margin-bottom: 20px;
+#navbar-list-bottom .search-btn:hover{
+    cursor: pointer;
 }
 
-.auth-form_input{
-    width: 100%;
-    height: 40px;
-    margin-top: 16px;
-    padding: 24px 12px;
-    font-size: 1.4rem;
-    border: 1px solid var(--border-color);
-    border-radius: 2px;
-}
 
-.auth-heading{
-    color:#000;
-    font-size: 3rem;
-    font-weight: 600;
+#searchsection{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	height: 100vh;
+	width: 100vw;
+	overflow-x: auto;
+	background-color: #fff;
+	display: none;
+	animation: righttop 0.5s;
+}   
+#searchsection .close{
+	position: absolute;
+	top: 10px;
+	right: 50px;
+	font-size: 60pt;
+	transform: rotate(45deg);
+	cursor: pointer;
 }
-
-.auth-switch{
-    text-decoration: none;
-    color: #999;
-    font-size: 2rem;
-    font-weight: 500;
+#searchsection .searchbox{
+	height: 80px;
+	width: 1000px;
+	margin: 20px auto;
+	padding: 10px;
+	border-bottom: 3px solid #000;
+}
+#searchsection .searchbox input{
+	height: 100%;
+	width: 95%;
+	font-size: 40pt;
+	outline: none;
+}
+#searchsection .searchbox button{
+	width: 5%;
+	height: 100%;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+#searchsection .searchbox button img{
+	width: 100%;
+}
+#searchsection #searchextend{
+	text-align: center;
+	font-size: 30pt;
+	display: none;
+	justify-content: center;
+}
+#searchsection .active{
+	display: flex !important;
+}
+#searchsection #searchextend div:first-child{
+	width: 30%;
     
-} */
-
-/* #switch-to-login{
-
-} */
-
-/* .auth-switch:hover{
-    color: #000;
+}
+#searchsection #searchextend div:last-child{
+	width: 70%;
+}
+#searchsection #searchextend div input{
+	vertical-align: middle;
+	width: 200px;
+	padding: 10px 5px;
+	font-size: 12pt;
+	text-align: center;
+	outline: none;
+	border: 1px solid #000;
+}
+#searchsection #searchextend div select{
+	vertical-align: top;
+	padding: 10px 5px;
+	font-size: 12pt;
+	text-align: center;
+	outline: none;
+	border: 1px solid #000;
+}
+#searchsection #searchresult{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding-right: 10px;
 }
 
+/* SEARCH END */
 
-
-.auth-controls{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.auth-btn {
-    min-width: 142px;
-    height: 36px;
-    text-decoration:none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 36px;
-    margin-right: 2px;
-    text-align: center;
-}
-
-.btn_back{
-    background-color: #000;
-    color: #ffffff;
-    position: relative;
-}
-
-.auth-btn.btn_back::after{
-    content: '';
-    display: block;
-    background-color: #ffffff;
-    height: 2px;
-    width: 70px;
-    margin-left: 37px;
-    position: absolute;
-    top: 70%;
-    transform: scale(0, 1);
-    transition: 0.4s ease-out;
-}
-
-.auth-btn.btn_back:hover::after{
-    transform: scale(1, 1);
-}
-
-.auth-btn.btn_back:hover{
-    bottom: 2px;
-}
-
-.auth-btn.btn_primary{
-   
-    background-color: #000;
-    color: #ffffff;
-    position: relative;
-}
-
-.auth-btn.btn_primary::after{
-    content: '';
-    display: block;
-    background-color: #ffffff;
-    height: 2px;
-    width: 82px;
-    margin-left: 30px;
-    position: absolute;
-    top: 70%;
-    transform: scale(0, 1);
-    transition: 0.4s ease-out;
-}
-
-.auth-btn.btn_primary:hover::after{
-    transform: scale(1, 1);
-}
-
-.auth-btn.btn_primary:hover{
-    bottom: 2px;
-}
+/* header end */
 
 
 
-.auth-help{
-    display: flex;
-    justify-content: flex-end;
-    margin: 12px;
-}
-
-.auth-help_link{
-    
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #333;
-}
-
-.auth-help_link:hover{
-    color:orangered;
-    text-decoration: underline;
-} */
-
-/* end header */
-
+/* SLIDER BEGIN */
 #slider {
     /* width: 100%; */
     background-color: #ccc;
@@ -838,8 +722,207 @@
     background: url('../img/slider/suzuki-gsx1000.jpg') top center / cover no-repeat;
 }
 
+
+
 /* content */
-.group-product {
+
+/*Main*/
+#main{
+	/* position: relative;
+	top: -80px;
+	left: 0; */
+}
+#main #maincontent{
+
+	background-color: #fff;
+}
+#main #product{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 10px 10px 20px 0;
+}
+.card{
+	width: calc(25% - 10px);
+	height: 300px;
+	border: 1px solid #000;
+    border-radius: 10px;
+	text-align: center;
+	margin: 10px 0 0px 10px;
+	position: relative;
+	overflow: hidden;
+}
+.card img{
+	width: 80%;
+	margin: 30px 0 30px 0;
+	transition: 0.4s;
+}
+.card p{
+	padding-bottom: 10px;
+	font-size: 11pt;
+	font-weight: 600;
+}
+.card .btn{
+	width: 60%;
+	height: 60px;
+	font-size: 14pt;
+	background-color: #fff;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+	color: #000;
+	font-weight: bold;
+	line-height: 40px;
+	cursor: pointer;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	transition: 0.4s;
+	opacity: 0;
+}
+.card:hover img{
+	width: 100%;
+	margin: 10px 0 30px 0;
+}
+.card:hover .btn{
+	top: 50%;
+	opacity: 1;
+}
+.card .btn:hover{
+	color: #ff4700;
+}
+#main #productInfo #info{
+	height: 600px;
+	width: 1000px;
+	background-color: #fff;
+	margin: 50px auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 50px 20px 20px;
+	position: relative;
+	animation: topdown 0.5s;
+	z-index: 20;
+}
+#main #productInfo #info .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 35pt;
+	transform: rotate(45deg);
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+}
+#main #productInfo #info .close:hover{
+	color: #ff4700;
+}
+#main #productInfo #info .left{
+	width: 60%;
+	align-self: center;
+}
+#main #productInfo #info .left #imgbig{
+	width: 100%;
+}
+#main #productInfo #info .right{
+	height: 100%;
+	width: 40%;
+}
+#main #productInfo #info .right #productname{
+	font-size: 26pt;
+}
+#main #productInfo #info .right #productname::after{
+	content: '';
+	height: 10px;
+	width: 100px;
+	background-color: #ff4700;
+	display: block;
+	margin: 20px 0 30px;
+}
+#main #productInfo #info .right #productprice{
+	font-size: 18pt;
+	margin-bottom: 20px;
+}
+#main #productInfo #info .right #size{
+	font-size: 16pt;
+	padding: 5px 30px;
+	border: 2px solid #000;
+	margin: 10px 0 20px;
+}
+#main #productInfo #info .right #quantity{
+	font-size: 16pt;
+	width: 80px;
+	height: 40px;
+	padding: 5px;
+	border: 2px solid #000;
+	margin: 10px 0 60px;
+	text-align: center;
+}
+#main #productInfo #info .right .quantitydown{
+	display: inline-block;
+	font-size: 16pt;
+	color: #ff4700;
+	width: 50px;
+	height: 40px;
+	border: 2px solid #000;
+	border-right: none;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+#main #productInfo #info .right .quantityup{
+	display: inline-block;
+	font-size: 16pt;
+	color: #ff4700;
+	width: 50px;
+	height: 40px;
+	border: 2px solid #000;
+	border-left: none;
+	background-color: #fff;
+	outline: none;
+	cursor: pointer;
+}
+#main #productInfo #info .right .quantityup:active , #main #productInfo #info .right .quantitydown:active{
+	background-color: #ff4700;
+	color: #fff;
+}
+#main #productInfo #info .right .addtocart{
+	display: block;
+	cursor: pointer;
+	font-size: 16pt;
+	padding: 10px 30px;
+	background-color: #ff4700;
+	color: #fff;
+	border: 2px solid #ff4700;
+}
+#main #productInfo #info .right .addtocart:hover{
+	background-color: #fff;
+	color: #ff4700;
+	border: 2px solid #ff4700;
+}
+/*page number*/
+#main #page{
+	display: flex;
+	justify-content: center;
+	height: 40px;
+}
+#main #page .pageNumber a{
+	display: block;
+	height: 22px;
+	width: 22px;
+	background-color: #ff4700;
+	border: 2px solid #ff4700;
+	text-decoration: none;
+	text-align: center;
+	line-height: 20px;
+	color: #fff;
+	margin-right: 10px;
+}
+#main #page .pageNumber a:hover{
+	background-color: #fff;
+	color: #ff4700;
+}
+
+/* .group-product {
     background-color: #dddddd;
 }
 
@@ -939,7 +1022,7 @@
     background-color: white;
     color: black;
     border: none;
-}
+} */
 
 
 /* end content */
@@ -1315,8 +1398,8 @@ button {
 }
 #maincontent {
     background-color: #f2f2f2;
-     width: calc(100vw - 70px); 
-    margin-left: 70px;
+    width: calc(100vw - 70px); 
+
 }
 #nav {
     background-color: #fff;
