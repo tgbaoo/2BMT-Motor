@@ -32,14 +32,14 @@ function showMenu2() {
 function showMenuMobile() {
 	var btn = document.getElementById('btn-menu');
 	if (btn.className == "") {
-		document.getElementById('btn-menu').classList.add('show');
-		document.getElementById('btn-menu').innerHTML = '&times;';
-		document.getElementById('nav-menu').classList.add('active');
+		document.getElementById('btnmenu').classList.add('show');
+		document.getElementById('btnmenu').innerHTML = '&times;';
+		document.getElementById('navmenu').classList.add('active');
 
 	} else {
-		document.getElementById('btn-menu').classList.remove('show');
-		document.getElementById('btn-menu').innerHTML = '&#9776;';
-		document.getElementById('nav-menu').classList.remove('active');
+		document.getElementById('btnmenu').classList.remove('show');
+		document.getElementById('btnmenu').innerHTML = '&#9776;';
+		document.getElementById('navmenu').classList.remove('active');
 	}
 
 }
@@ -183,7 +183,7 @@ function showProductInfo(productId) {
 			document.getElementById('imgbig').src = productArray[i].img;
 			document.getElementById('size').value = 36;
 			document.getElementById('quantity').value = 1;
-			document.querySelector('#info .right button.addtocart').setAttribute('onClick', 'addToCart(' + productId + ')');
+			document.querySelector('#info .right .addToCart').setAttribute('onClick', 'addToCart(' + productId + ')');
 		}
 	}
 }
@@ -196,64 +196,64 @@ function closeProductInfo() {
 
 
 /*CART*/
-function addToCart(productId) {
+function addToCart(productid1){
 	var size = document.getElementById('size').value;
 	var quantity = document.getElementById('quantity').value;
 	var productArray = JSON.parse(localStorage.getItem('product'));
-	var productTemp;
-	for (var i = 0; i < productArray.length; i++) {
-		if (productArray[i].productId == productId) {
-			productTemp = productArray[i];
+	var producttemp;
+	for(var i=0; i<productArray.length;i++){
+		if(productArray[i].productId==productid1){
+			producttemp = productArray[i];
 		}
 	}
-	if (localStorage.getItem('cart') === null) {
+	if(localStorage.getItem('cart')===null){
 		var cartArray = [];
-		productTemp.quantity = quantity;
-		productTemp.size = size;
-		productTemp.totalPrice = quantity * productTemp.price;
-		cartArray.unshift(productTemp);
-		localStorage.setItem('cart', JSON.stringify(cartArray));
-	} else {
+		producttemp.quantity = quantity;
+		producttemp.size = size;
+		producttemp.totalprice = quantity*producttemp.price;
+		cartArray.unshift(producttemp);
+		localStorage.setItem('cart',JSON.stringify(cartArray));
+	}else{
 		var cartArray = JSON.parse(localStorage.getItem('cart'));
-		productTemp.quantity = quantity;
-		productTemp.size = size;
-		productTemp.totalPrice = quantity * productTemp.price;
-		cartArray.unshift(productTemp);
-		localStorage.setItem('cart', JSON.stringify(cartArray));
+		producttemp.quantity = quantity;
+		producttemp.size = size;
+		producttemp.totalprice = quantity*producttemp.price;
+		cartArray.unshift(producttemp);
+		localStorage.setItem('cart',JSON.stringify(cartArray));		
 	}
 	closeProductInfo();
 }
 
-function showCartTable() {
-	if (localStorage.getItem('cart') === null || localStorage.getItem('cart') == '[]') {
-		var s = '<tr><th>Không có sản phẩm nào trong giỏ hàng</th></tr>';
-		document.getElementById('carttable').innerHTML = s;
-		document.getElementById('totalprice').innerHTML = 0;
-	} else {
+function showCartTable(){
+	if (localStorage.getItem('cart')===null || localStorage.getItem('cart')=='[]'){
+		var s='<tr><th>Không có sản phẩm nào trong giỏ hàng</th></tr>';
+		document.getElementById('carttable').innerHTML=s;
+		document.getElementById('totalprice').innerHTML=0;
+	}else {
 		var cartArray = JSON.parse(localStorage.getItem('cart'));
-		var s = '<tr><th></th><th>Sản phẩm</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr>';
-		var totalPrice = 0;
-		for (var i = 0; i < cartArray.length; i++) {
-			s += '<tr>' +
-				'<td><img src="../' + cartArray[i].img + '"></td>' +
-				'<td>' +
-				'<div>' + cartArray[i].name + '</div>' +
-				'<div>Size: ' + cartArray[i].size + '</div>' +
-				'</td>' +
-				'<td>' + currency(cartArray[i].price) + '</td>' +
-				'<td>' +
-				'<button onClick="quantityDown2(' + cartArray[i].productId + ')">-</button>' +
-				'<input id="quantity" type="text" disabled value="' + cartArray[i].quantity + '" onchange="updateCart(this.value,' + cartArray[i].productId + ')">' +
-				'<button onClick="quantityUp2(' + cartArray[i].productId + ')">+</button>' +
-				'</td>' +
-				'<td>' + currency(cartArray[i].price * cartArray[i].quantity) + '</td>' +
-				'<td><button onClick="deleteCartItem(' + cartArray[i].productId + ')">&times;</button></td>' +
+		var s='<tr><th></th><th>Sản phẩm</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr>';
+		var totalprice=0;
+		for (var i = 0; i < cartArray.length; i++){
+			s+=  '<tr>'+
+					'<td><img src="../'+cartArray[i].img+'"></td>'+
+					'<td>'+
+						'<div>'+cartArray[i].name+'</div>'+
+						'<div>Size: '+cartArray[i].size+'</div>'+
+					'</td>'+
+					'<td>'+currency(cartArray[i].price)+'</td>'+
+					'<td>'+
+						'<button onClick="quantityDown2('+cartArray[i].productId+')">-</button>'+
+						'<input id="quantity" type="text" disabled value="'+cartArray[i].quantity+'" onchange="updateCart(this.value,'+cartArray[i].productId+')">'+
+						'<button onClick="quantityUp2('+cartArray[i].productId+')">+</button>'+
+					'</td>'+
+					'<td>'+currency(cartArray[i].price*cartArray[i].quantity)+'</td>'+
+					'<td><button onClick="deleteCartItem('+cartArray[i].productId+')">&times;</buttom></td>'+
 				'</tr>';
-			totalPrice += cartArray[i].price * cartArray[i].quantity;
+			totalprice+=cartArray[i].price*cartArray[i].quantity;
 		}
-		document.getElementById('carttable').innerHTML = s;
-		document.getElementById('totalprice').innerHTML = currency(totalprice);
-	}
+		document.getElementById('carttable').innerHTML=s;
+		document.getElementById('totalprice').innerHTML=currency(totalprice);
+	}	
 }
 
 function deleteCartItem(id) {
@@ -317,58 +317,58 @@ function quantityUp2(id) {
 	showCartTable();
 }
 
-function buy() {
-	if (localStorage.getItem('userlogin') === null) {
-		customAlert('Bạn phải đăng nhập để mua sản phẩm', 'warning');
+function buy(){
+	if(localStorage.getItem('userlogin')===null){
+		customAlert('Bạn phải đăng nhập để mua sản phẩm','warning');
 		return false;
 	}
 	var info = '';
-	var totalPrice = 0;
-	if (localStorage.getItem('cart') === null || localStorage.getItem('cart') == '[]') {
+	var totalprice = 0;
+	if(localStorage.getItem('cart')===null || localStorage.getItem('cart')=='[]'){
 		return false;
 	}
 	var cartArray = JSON.parse(localStorage.getItem('cart'));
 	for (var i = 0; i < cartArray.length; i++) {
-		info += cartArray[i].quantity + ' x ' + cartArray[i].name + ' size ' + cartArray[i].size + '; ';
-		totalPrice += cartArray[i].quantity * cartArray[i].price;
+			info+=cartArray[i].quantity+' x '+cartArray[i].name+' size '+ cartArray[i].size+'; ';
+			totalprice+=cartArray[i].quantity*cartArray[i].price;
 	}
 	var customer = JSON.parse(localStorage.getItem('userlogin'));
 	var date = new Date();
-	var d = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
-	if (localStorage.getItem('bill') === null) {
+	var d = date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear();
+	if(localStorage.getItem('bill')===null){
 		var billArray = [];
-		var bill = { id: billArray.length, info: info, totalPrice: totalPrice, customer: customer, date: d, status: 'Chưa xử lý' };
+		var bill = {id: billArray.length, info: info, totalprice: totalprice, customer: customer, date: d, status: 'Chưa xử lý'};
 		billArray.unshift(bill);
 		localStorage.setItem('bill', JSON.stringify(billArray));
 	}
-	else {
+	else{
 		var billArray = JSON.parse(localStorage.getItem('bill'));
-		var bill = { id: billArray.length, info: info, totalPrice: totalPrice, customer: customer, date: d, status: 'Chưa xử lý' };
+		var bill = {id: billArray.length, info: info, totalprice: totalprice, customer: customer, date: d, status: 'Chưa xử lý'};
 		billArray.unshift(bill);
 		localStorage.setItem('bill', JSON.stringify(billArray));
-	}
+	}	
 	localStorage.removeItem('cart');
 	showCartTable();
 	showBill();
 }
 
-function showBill() {
-	if (localStorage.getItem('bill') === null) {
+function showBill(){
+	if (localStorage.getItem('bill')===null){
 		document.getElementById('bill').style.display = 'none';
 	}
-	else {
-		var user = JSON.parse(localStorage.getItem('user-login'))
+	else{
+		var user = JSON.parse(localStorage.getItem('userlogin'))
 		var billArray = JSON.parse(localStorage.getItem('bill'));
-		var s = '<h2>Đơn hàng đã đặt</h2>';
+		var s='<h2>Đơn hàng đã đặt</h2>';
 		for (var i = 0; i < billArray.length; i++) {
-			if (user.username == billArray[i].customer.username) {
+			if(user.username==billArray[i].customer.username){
 				document.getElementById('bill').style.display = 'block';
-				s += '<div class="billcontent">' +
-					'<div>' + billArray[i].info + '</div>' +
-					'<div>' + currency(billArray[i].totalPrice) + '</div>' +
-					'<div>' + billArray[i].date + '</div>' +
-					'<div>' + billArray[i].status + '</div>' +
-					'</div>';
+				s+='<div class="billcontent">'+
+					'<div>'+billArray[i].info+'</div>'+
+					'<div>'+currency(billArray[i].totalprice)+'</div>'+
+					'<div>'+billArray[i].date+'</div>'+
+					'<div>'+billArray[i].status+'</div>'+
+				'</div>';
 			}
 		}
 		document.getElementById('bill').innerHTML = s;
@@ -444,7 +444,7 @@ function showExtend() {
 		var priceForm = document.getElementById('priceform').value = "";
 		var priceTo = document.getElementById('priceto').value = "";
 	}
-}
+}																																																																																																																																																											
 
 function showExtend2() {
 	if (document.getElementById('searchextend').className == '') {
@@ -467,7 +467,7 @@ function showExtend2() {
 function createAdmin() {
 	if (localStorage.getItem('user') === null) {
 		var userArray = [];
-		var user = { username: 'admin', password: 'admin', fullname: 'Trần Lê Huy Quyền', address: '273 An Dương Vương, P3, Quận 5, TPHCM', phone: '0566490523', datesginup: '23-11-1999' };
+		var user = { username: 'admin', password: 'admin', fullname: 'admin', address: '273 An Dương Vương, P3, Quận 5, TPHCM', phone: '0566490523', datesginup: '23-11-1999' };
 		userArray.push(user);
 		localStorage.setItem('user', JSON.stringify(userArray));
 	}
@@ -646,27 +646,27 @@ function checkLogin() {
 				'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		} else {
 			s = '<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')">LOGOUT</button></li>' +
-			'<li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
-			'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
+				'<li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
+				'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		}
 		document.querySelector('.header .navbar #navbar-list-bottom').innerHTML = s;
 	}
 }
 function checkLogin2() {
-	if (localStorage.getItem('user-login')) {
-		var user = JSON.parse(localStorage.getItem('user-login'));
+	if (localStorage.getItem('userlogin')) {
+		var user = JSON.parse(localStorage.getItem('userlogin'));
 		var s = '';
 		if (user.username == 'admin') {
-			s = '<li><button onClick="window.location.href=\'../admin/product.html\'"><img src="../images/icon/settings.svg"></button></li>' +
-				'<li><button>' + user.fullName + '</button><button id="btn-logout" onClick="logout(\'../index.html\')">LOGOUT</button></li>' +
-				'<li><button onClick="location.href=\'../file/cart.html\'"><img src="../images/icon/carticon.svg"></button></li>' +
-				'<li><button onClick="showSearch()"><img src="../images/icon/searchicon.svg"></button></li>';
+			s = '<li class="nav-user"><button onClick="window.location.href=\'../admin/product.html\'"><i class="fas fa-tools"></i></button></li>' +
+			'<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')">LOGOUT</button></li>' +
+			'<li class="navbar-item2"><a class="shopping" href="../admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
+			'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		} else {
-			s = '<li><button>' + user.fullName + '</button><button id="btn-logout" onClick="logout(\'../index.html\')">LOGOUT</button></li>' +
-				'<li><button onClick="location.href=\'../file/cart.html\'"><img src="../images/icon/carticon.svg"></button></li>' +
-				'<li><button onClick="showSearch()"><img src="../images/icon/searchicon.svg"></button></li>';
+			s = '<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'../index.html\')">LOGOUT</button></li>' +
+			'<li class="navbar-item2"><a class="shopping" href="../admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
+			'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		}
-		document.querySelector('#nav .top-nav ul.right').innerHTML = s;
+		document.querySelector('.cart-main .navbar #navbar-list-bottom').innerHTML = s;
 	}
 }
 /*END USER*/
