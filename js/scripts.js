@@ -10,22 +10,44 @@ function currency(num) {
 function showMenu() {
 	var menuList = ['HONDA', 'SUZUKI', 'YAMAHA', 'KAWASAKI'];
 	var ul = document.getElementById('navbar-list-top');
-	var li = '<li class="navbar-item1"><a href="./index.html" class="logo"><img src="./assets/img/header/navLogo.PNG" alt="2BMT MOTOR" /></a></li>' +
-            '<li class="navbar-item1"><a class="home" href="./index.html">TRANG CHỦ</a></li>';
+	var li = '<li class="navbar-logo"><a href="./index.html" class="logo"><img src="./assets/img/header/navLogo.PNG" alt="2BMT MOTOR" /></a></li>' +
+	'<li class="navbar-item1"><a class="home" href="./index.html">TRANG CHỦ</a></li>'+
+	'<li id="main-menu" class="navbar-item1"><a class="home" href="./index.html">SẢN PHẨM <i class="fas fa-angle-down"></i></a>' +
+		
+	'</li>'+
+	'<li class="navbar-item1"><a class="home intro" href="./intro.html">GIỚI THIỆU</a></li>'+
+             '<li class="navbar-item1"><a class="home pm" href="./pm.html">LIÊN HỆ</a></li>';
+	ul.innerHTML = li;
+	var main_menu = document.getElementById('main-menu');
+	var li_ul = '<ul id="sub-menu"></ul>';
+	var li_sub = '';
+	main_menu.innerHTML += li_ul;
+	var sub = document.getElementById('sub-menu');
 	for (var i = 0; i < menuList.length; i++) {
-		li += '<li><a class="brand ' + menuList[i].toLowerCase() + '" href="index.html?' + menuList[i].toLowerCase() + '&0">' + menuList[i] + '</a></li>';
-		ul.innerHTML = li;
+		li_sub += '<li><a class="brand ' + menuList[i].toLowerCase() + '" href="index.html?' + menuList[i].toLowerCase() + '&0">' + menuList[i] + '</a></li>';
+		sub.innerHTML = li_sub;
 	}
 }
 
 function showMenu2() {
 	var menuList = ['HONDA', 'SUZUKI', 'YAMAHA', 'KAWASAKI'];
 	var ul = document.getElementById('navbar-list-top');
-	var li = '<li class="navbar-item1"><a href="../index.html" class="logo"><img src="../assets/img/header/navLogo.PNG" alt="2BMT MOTOR" /></a></li>' +
-	'<li class="navbar-item1"><a class="home" href="../index.html">TRANG CHỦ</a></li>';
+	var li = '<li class="navbar-logo"><a href="../index.html" class="logo"><img src="../assets/img/header/navLogo.PNG" alt="2BMT MOTOR" /></a></li>' +
+	'<li class="navbar-item1"><a class="home" href="../index.html">TRANG CHỦ</a></li>'+
+	'<li id="main-menu" class="navbar-item1"><a class="home" href="../index.html">SẢN PHẨM <i class="fas fa-angle-down"></i></a>' +
+		
+	'</li>'+
+	'<li class="navbar-item1"><a class="home intro" href="./intro.html">GIỚI THIỆU</a></li>'+
+             '<li class="navbar-item1"><a class="home pm" href="./pm.html">LIÊN HỆ</a></li>';
+	ul.innerHTML = li;
+	var main_menu = document.getElementById('main-menu');
+	var li_ul = '<ul id="sub-menu"></ul>';
+	var li_sub = '';
+	main_menu.innerHTML += li_ul;
+	var sub = document.getElementById('sub-menu');
 	for (var i = 0; i < menuList.length; i++) {
-		li += '<li><a class="brand ' + menuList[i].toLowerCase() + '" href="../index.html?' + menuList[i].toLowerCase() + '&0">' + menuList[i] + '</a></li>';
-		ul.innerHTML = li;
+		li_sub += '<li><a class="brand ' + menuList[i].toLowerCase() + '" href="../index.html?' + menuList[i].toLowerCase() + '&0">' + menuList[i] + '</a></li>';
+		sub.innerHTML = li_sub;
 	}
 }
 
@@ -44,6 +66,57 @@ function showMenuMobile() {
 
 }
 
+// hero-slide
+var slideIndex = 0;
+showSlide();
+
+var timer = setInterval(showSlide, 3000);
+var slideContainer = document.querySelector('.hero-section')
+var slideControl = document.querySelector('.slide-control')
+
+slideContainer.onmouseover = function(){
+  clearInterval(timer);
+}
+
+slideControl.onmouseover = function(){
+  clearInterval(timer);
+}
+
+slideContainer.onmouseleave = function(){
+  timer = setInterval(showSlide,3000);
+}
+
+slideControl.onmouseleave = function(){
+  timer = setInterval(showSlide, 3000);
+}
+
+function showSlide(){
+ 
+   var slides = document.querySelectorAll('.slide-item');
+   var dots = document.querySelectorAll(".dot");
+
+   slides.forEach(function(slide , index){
+      slides[index].style.display = 'none'
+      slides[index].classList.remove('active')
+   })
+
+   dots.forEach(function(dot,index){
+     dots[index].classList.remove("active");
+   })
+
+   slideIndex++;
+   if(slideIndex > slides.length) slideIndex = 1;
+   slides[slideIndex-1].style.display = "block";
+   slides[slideIndex-1].classList.add('active')
+   dots[slideIndex-1].classList.add("active");
+}
+
+function chooseSlide(n){
+  slideIndex = n;
+  showSlide();
+  clearInterval(timer);
+}
+
 /*PRODUCT*/
 function createProduct() {
 	if (localStorage.getItem('product') === null) {
@@ -53,7 +126,7 @@ function createProduct() {
 			{ productId: 10053, brand: 'kawasaki', img: './assets/img/product/kawasaki/kawasaki Z650 ABS.png', name: 'kawasaki Z650 ABS', price:187000000 },
 			{ productId: 10032, brand: 'yamaha', img: './assets/img/product/yamaha/Yamaha R7.jpg', name: 'Yamaha R7', price: 480000000 },
 			{ productId: 10016, brand: 'suzuki', img: './assets/img/product/suzuki/Suzuki-GSX-R750.jpg', name: 'Suzuki-GSX-R750', price: 290000000 },
-			{ productId: 10039, brand: 'yamaha', img: './assets/img/product/yamaha/yamaha YZF-R15.png', name: 'Yamaha YZF-R15' , price:15600000},
+			{ productId: 10039, brand: 'yamaha', img: './assets/img/product/yamaha/yamaha YZF-R15.png', name: 'Yamaha YZF-R15' , price:156000000},
 			{ productId: 10006, brand: 'honda', img: './assets/img/product/honda/Honda CBR1000RR SP2.jpg', name: 'Honda CBR1000RR SP2', price: 950000000 },
 			{ productId: 10047, brand: 'kawasaki', img: './assets/img/product/kawasaki/Kawasaki ZH2.jpg', name: 'Kawasaki ZH2', price: 690000000 },
 			{ productId: 10011, brand: 'honda', img: './assets/img/product/honda/Honda Fury 1300.jpg', name:'Honda Fury 1300' , price:580000000 },
@@ -116,10 +189,11 @@ function showProduct() {
 	var s = '';
 	var productArray = JSON.parse(localStorage.getItem('product'));
 	if (temp[1] == '' || temp[1] == undefined || temp[1].search('all') == 0) {
+		console.log("alo all");
 		if (temp[1] == '' || temp[1] == undefined) {
 			temp = 'all&0';
 		}
-		else {
+		else {	
 			temp = temp[1];
 		}
 		var temp2 = temp.split("&");
@@ -128,21 +202,24 @@ function showProduct() {
 		for (var i = pos; i < productArray.length; i++) {
 			s += '<div class="card">' +
 				'<img src="' + productArray[i].img + '">' +
+				'<p class="product-name">' + productArray[i].name + '</p>' +
+				'<p class="product-price"> Giá: ' + currency(productArray[i].price) + '</p>' +
 				'<button class="btn" onClick="showProductInfo(' + productArray[i].productId + ')">Chi tiết</button></div>';
 			count++;
-			if (count == 12)
+			if (count == 9)
 				break;
 		}
-		pageNum = Math.ceil(productArray.length / 12);
+		pageNum = Math.ceil(productArray.length / 9);
 		var link = '';
 		for (var i = 1; i <= pageNum; i++) {
-			pos = (i - 1) * 12;
+			pos = (i - 1) * 9;
 			var a = '<a href="index.html?all&' + pos + '">' + i + '</a>';
 			link += '<div class="pageNumber">' + a + '</div>';
 		}
 		document.getElementById('page').innerHTML = link;
 	}
 	else {
+		console.log("alo");
 		temp = temp[1];
 		var temp2 = temp.split("&");
 		var brand = temp2[0];
@@ -156,15 +233,17 @@ function showProduct() {
 		for (var i = pos; i < arrTemp.length; i++) {
 			s += '<div class="card">' +
 				'<img src="' + arrTemp[i].img + '">' +
+				'<p class="product-name">' + arrTemp[i].name + '</p>' +
+				'<p class="product-price"> Giá: ' + currency(arrTemp[i].price) + '</p>' +
 				'<button class="btn" onClick="showProductInfo(' + arrTemp[i].productId + ')">Chi tiết</button></div>';
 			count++;
-			if (count == 8)
+			if (count == 6)
 				break;
 		}
-		pageNum = Math.ceil(arrTemp.length / 8);
+		pageNum = Math.ceil(arrTemp.length / 6);
 		var link = '';
 		for (var i = 1; i <= pageNum; i++) {
-			pos = (i - 1) * 8;
+			pos = (i - 1) * 6;
 			var a = '<a href="index.html?' + brand + '&' + pos + '">' + i + '</a>';
 			link += '<div class="pageNumber">' + a + '</div>';
 		}
@@ -173,17 +252,17 @@ function showProduct() {
 	document.getElementById('product').innerHTML = s;
 }
 
-function showProductInfo(productId) {
+function showProductInfo(productid) {
 	document.getElementById('productInfo').style.display = 'block';
 	var productArray = JSON.parse(localStorage.getItem('product'));
 	for (var i = 0; i < productArray.length; i++) {
-		if (productArray[i].productId == productId) {
+		if (productArray[i].productId == productid) {
 			document.getElementById('productname').innerHTML = productArray[i].name;
 			document.getElementById('productprice').innerHTML = 'Giá: ' + currency(productArray[i].price);
 			document.getElementById('imgbig').src = productArray[i].img;
-			document.getElementById('size').value = 36;
+			document.getElementById('version').value = 'non-abs';
 			document.getElementById('quantity').value = 1;
-			document.querySelector('#info .right .addToCart').setAttribute('onClick', 'addToCart(' + productId + ')');
+			document.querySelector('#info .right button.addtocart').setAttribute('onClick', 'addToCart(' + productid + ')');
 		}
 	}
 }
@@ -197,7 +276,7 @@ function closeProductInfo() {
 
 /*CART*/
 function addToCart(productid1){
-	var size = document.getElementById('size').value;
+	var version = document.getElementById('version').value;
 	var quantity = document.getElementById('quantity').value;
 	var productArray = JSON.parse(localStorage.getItem('product'));
 	var producttemp;
@@ -209,14 +288,14 @@ function addToCart(productid1){
 	if(localStorage.getItem('cart')===null){
 		var cartArray = [];
 		producttemp.quantity = quantity;
-		producttemp.size = size;
+		producttemp.version = version;
 		producttemp.totalprice = quantity*producttemp.price;
 		cartArray.unshift(producttemp);
 		localStorage.setItem('cart',JSON.stringify(cartArray));
 	}else{
 		var cartArray = JSON.parse(localStorage.getItem('cart'));
 		producttemp.quantity = quantity;
-		producttemp.size = size;
+		producttemp.version = version;
 		producttemp.totalprice = quantity*producttemp.price;
 		cartArray.unshift(producttemp);
 		localStorage.setItem('cart',JSON.stringify(cartArray));		
@@ -231,14 +310,14 @@ function showCartTable(){
 		document.getElementById('totalprice').innerHTML=0;
 	}else {
 		var cartArray = JSON.parse(localStorage.getItem('cart'));
-		var s='<tr><th></th><th>Sản phẩm</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr>';
+		var s='<tr><th></th><th>Tên xe</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr>';
 		var totalprice=0;
 		for (var i = 0; i < cartArray.length; i++){
 			s+=  '<tr>'+
 					'<td><img src="../'+cartArray[i].img+'"></td>'+
 					'<td>'+
 						'<div>'+cartArray[i].name+'</div>'+
-						'<div>Size: '+cartArray[i].size+'</div>'+
+						'<div>Phiên bản: '+cartArray[i].version+'</div>'+
 					'</td>'+
 					'<td>'+currency(cartArray[i].price)+'</td>'+
 					'<td>'+
@@ -329,7 +408,7 @@ function buy(){
 	}
 	var cartArray = JSON.parse(localStorage.getItem('cart'));
 	for (var i = 0; i < cartArray.length; i++) {
-			info+=cartArray[i].quantity+' x '+cartArray[i].name+' size '+ cartArray[i].size+'; ';
+			info+=cartArray[i].name+' version '+ cartArray[i].version+' x '+cartArray[i].quantity+'; ';
 			totalprice+=cartArray[i].quantity*cartArray[i].price;
 	}
 	var customer = JSON.parse(localStorage.getItem('userlogin'));
@@ -337,13 +416,13 @@ function buy(){
 	var d = date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear();
 	if(localStorage.getItem('bill')===null){
 		var billArray = [];
-		var bill = {id: billArray.length, info: info, totalprice: totalprice, customer: customer, date: d, status: 'Chưa xử lý'};
+		var bill = {id: billArray.length, info: info, totalprice: totalprice, customer: customer, date: d, status: 'Đang chờ'};
 		billArray.unshift(bill);
 		localStorage.setItem('bill', JSON.stringify(billArray));
 	}
 	else{
 		var billArray = JSON.parse(localStorage.getItem('bill'));
-		var bill = {id: billArray.length, info: info, totalprice: totalprice, customer: customer, date: d, status: 'Chưa xử lý'};
+		var bill = {id: billArray.length, info: info, totalprice: totalprice, customer: customer, date: d, status: 'Đang chờ'};
 		billArray.unshift(bill);
 		localStorage.setItem('bill', JSON.stringify(billArray));
 	}	
@@ -467,7 +546,7 @@ function showExtend2() {
 function createAdmin() {
 	if (localStorage.getItem('user') === null) {
 		var userArray = [];
-		var user = { username: 'admin', password: 'admin', fullname: 'admin', address: '273 An Dương Vương, P3, Quận 5, TPHCM', phone: '0566490523', datesginup: '23-11-1999' };
+		var user = { username: 'admin', password: 'admin', fullname: 'admin', address: '273 An Dương Vương, P3, Quận 5, TPHCM', phone: '0123456789', datesginup: '5-12-2022' };
 		userArray.push(user);
 		localStorage.setItem('user', JSON.stringify(userArray));
 	}
@@ -499,13 +578,18 @@ function showLogin() {
 	document.getElementById('signup').style.display = 'none';
 	document.getElementById('login').style.display = 'block';
 }
+const modal = document.querySelector('.js-modal');
 document.getElementById('signupform').addEventListener('submit', createUser);
 document.getElementById('loginform').addEventListener('submit', login);
 document.getElementById('user').addEventListener('click', closeForm);
+modal.addEventListener('click', closeProductInfo)
 document.getElementById('loginform').addEventListener('click', function(event) {
 	event.stopPropagation();
 });
 document.getElementById('signupform').addEventListener('click', function(event) {
+	event.stopPropagation();
+});
+document.getElementById('info').addEventListener('click', function(event) {
 	event.stopPropagation();
 });
 
@@ -641,11 +725,11 @@ function checkLogin() {
 		var s = '';
 		if (user.username == 'admin') {
 			s = '<li class="nav-user"><button onClick="window.location.href=\'admin/product.html\'"><i class="fas fa-tools"></i></button></li>' +
-				'<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')">LOGOUT</button></li>' +
+				'<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')"><i class="fas fa-sign-out-alt"></i></button></li>' +
 				'<li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
 				'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		} else {
-			s = '<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')">LOGOUT</button></li>' +
+			s = '<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')"><i class="fas fa-sign-out-alt"></i></button></li>' +
 				'<li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
 				'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		}
@@ -658,11 +742,11 @@ function checkLogin2() {
 		var s = '';
 		if (user.username == 'admin') {
 			s = '<li class="nav-user"><button onClick="window.location.href=\'../admin/product.html\'"><i class="fas fa-tools"></i></button></li>' +
-			'<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')">LOGOUT</button></li>' +
+			'<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'index.html\')"><i class="fas fa-sign-out-alt"></i></button></li>' +
 			'<li class="navbar-item2"><a class="shopping" href="../admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
 			'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		} else {
-			s = '<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'../index.html\')">LOGOUT</button></li>' +
+			s = '<li class="nav-user"><button>' + user.fullname + '</button><button id="btnlogout" onClick="logout(\'../index.html\')"><i class="fas fa-sign-out-alt"></i></button></li>' +
 			'<li class="navbar-item2"><a class="shopping" href="../admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>' + 
 			'<li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>';
 		}

@@ -12,6 +12,128 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/font-icon/themify-icons/themify-icons.css">
     <title>2BMT MOTOR</title>
+        <style>
+    
+            .bread-crumb {
+                display: flex;
+                text-align: center;
+                background-color: #fff;
+                padding: 45px 0;
+            }
+            
+            .bread-crumb ul li{
+                float: left;
+                padding: 5px;
+                line-height: 15px;
+                color: #69be28ed;
+                
+            }
+            .bread-crumb ul li a{
+                color:black;
+            }
+            .bread-crumb ul li a :hover{
+                color: #69be28ed;
+            }
+            
+            section{
+                display: block;
+            }
+            .d-none{
+                display: none!important;
+            }
+            .container {
+                margin : 0 auto;
+                padding: 0 10%;
+            }
+            .container h2{
+                text-align: center;
+                padding: 20px 0;
+                color: #494949;
+                font-size: 30px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .container h4{
+                font-size: 20px;
+                text-transform: uppercase;
+                line-height: 24px;
+                font-weight: bold;
+                color: #494949;
+            }
+            .container h6{
+                font-size: 18px;
+                margin-top: 35px;
+                font-weight: bold;
+                color: #494949;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+            .contact-item{
+                margin-top: 30px;
+                display: flex;
+                justify-items: center;
+            }
+            .contac-icon{
+                display: flex;
+                align-items: center;
+                justify-items: center;
+                width: 24px;
+                height: 24px;
+                background-color: #69be28ed;
+                margin-right: 20px;
+                
+            }
+            .contac-icon i{
+                font-size: 1.5rem;
+                color: #fff;
+            }
+            .contact-page .contact-item  a{
+                color: black;
+            }
+            .contact-page .contact-item  a :hover{
+                color: #69be28ed;
+            }
+            .p-content{
+                margin: 10px 0 30px;
+                font-size: 18px;
+                line-height: 22px;
+                color: #656565;
+            }
+            input[type=text], textarea{
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+            }
+            input[type=submit]{
+                background-color: #69be28ed;
+                color: #fff;
+                padding: 15px 60px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+            input[type=submit]:hover{
+                background-color:#656565;
+            }
+            
+            .map{
+                        
+                padding-left: 10px;
+                padding-right: 10px;
+                margin: 0 auto;
+            }
+            .footer{
+                margin-top: 15px;
+            }
+                
+            
+        </style>
 </head>
     <body onLoad="showMenu();showProduct();checkLogin();">
 
@@ -131,14 +253,13 @@
         <div id="searchsection">
             <div class="container">
                 <div class="close" onClick="closeSearch()">+</div>
-                <div class="search-header">TÌM KIẾM XE</div>
                 <div class="searchbox">
-                    <input type="text" placeholder="Nhập tên xe" id="search" onKeyUp="search()"><button onClick="showExtend()"><img src="./assets/img/icon/arrow.svg"></button>
+                    <input type="text" placeholder="Tìm kiếm" id="search" onKeyUp="search()"><button onClick="showExtend()"><img src="./assets/img/icon/arrow.svg"></button>
                 </div>
                 <div id="searchextend" class="">
                     <div>
                         <select id="brandsearch" onchange="search()">
-                            <option value="all" selected>Tất cả loại xe</option>
+                            <option value="all" selected>TẤT CẢ</option>
                             <option value="honda">HONDA</option>
                             <option value="yamaha">YAMAHA</option>
                             <option value="suzuki">SUZUKI</option>
@@ -154,238 +275,143 @@
     <!------------------------SEARCH SECTION END --------------------------->
 
 
-        <!-- secions slide-->
-        <div id="hero-section" class="hero-section">
+
         
-            <div class="bgimg slide-item fade" style="background-image: url(./assets/img/slider/pic1.jpg)">
-                <div class="caption">
-                    <h2 class="top-down delay-2">
-                       THÀNH TỰU CỦA 2BMT MOTOR 
-                       
-                    </h2>
-
-                    <p class="top-down delay-4">
-                        Showroom 2BMT MOTOR đã nhiều năm liền được tôn vinh là một trong những TOP Công ty xuất sắc nhất trên toàn quốc của Honda Việt Nam kể từ khi thành lập 10/2010 cho đến nay.                    </p>
-
-                    <a href="#main" class="btn top-down delay-6 ">
-                        MUA NGAY
-                    </a>
-                </div>
-
-            </div>
-
-            
-            <div class="bgimg slide-item fade" style="background-image: url(./assets/img/slider/pic2.jpg)">
-               <div class="caption">
-                   <h2>
-                       NHIỆM VỤ CỦA 2BMT MOTOR
-                   </h2>
-
-                   <p>
-                       2BMT tự hào rằng là nhà phần phối xe phân khối lớn chất lượng, chính hãng và đem lại những dịch vụ khác nhằm mang lại cho khách hàng những trải nghiệm tốt nhất khi đếm với showroom của chúng tôi
-                   </p>
-
-                   <a href="#main" class="btn">
-                       MUA NGAY
-                   </a>
-               </div>
-             
-            </div>
-
-            
-            <div class="bgimg slide-item fade" style="background-image: url(./assets/img/slider/pic3.jpg)">
-               <div class="caption">
-                   <h2>
-                       SỨ MỆNH CỦA 2BMT MOTOR
-                   </h2>
-
-                   <p>
-                       Theo đuổi đam mê tốc độ, chinh phục những cung đường chưa từng đi qua, những vùng đất mới, những thử thách mới mỗi khi lăn bánh, hãy để 2BMT đồng hành cùng bạn 
-                   </p>
-
-                   <a href="main" class="btn">
-                       MUA NGAY
-                   </a>
-               </div>
-
-            </div>
-
-           
-            <div class="slide-control">
-               <div class="slide-control-wrapper">
-                   <span class="dot" onclick="chooseSlide(0)"></span>
-                   <span class="dot"  onclick="chooseSlide(1)"></span>
-                   <span class="dot" onclick="chooseSlide(2)" ></span>
-
-               </div>
-            </div>
-      
-   </div>
-        <!-- end sections slide-->
-    <!-- contact -->
-    <div id="contact">
-        <div class="item">
-            <div class="item-content">
-                <p><i class ="ti-credit-card"></i></p>
-                <span class="text">THANH TOÁN DỄ DÀNG VÀ BẢO MẬT</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-content">
-                <p><i class ="ti-truck"></i></p>
-                <span class="text">GIAO HÀNG ĐẢM BẢO TOÀN QUỐC</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-content">
-                <p><i class ="ti-headphone-alt"></i></p>
-                <span class="text">HOT LINE 09095678
-                <br> 10:00 - 19:00
-            </div>
-            </span>
-        </div>
-        <div class="item">
-            <div class="item-content">
-                <p><i class ="ti-briefcase"></i></p>
-                <span class="text">CAM KẾT SẢN PHẨM CHÍNH HÃNG</span>
-            </div>
-        </div>
+        
+    
+    
+    <div class="intro-header" style="padding-top: 50px;">
+        <h1>LIÊN HỆ</h1>
     </div>
-    <!-- end contact -->
-        <!-- ---------------------------SLIDER-------------------------- -->
-        <div id="slider">
-            <div class="slider-heading">
-                DANH MỤC SẢN PHẨM
+    
+        <div class="container contact">
+            <h2>Bản Đồ Cửa Hàng</h2>
+        
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9042744516187!2d105.81368901459645!3d21.036515885994156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab128b45bf23%3A0xd1d32b58169417cd!2zMjY2IMSQ4buZaSBD4bqlbiwgTGnhu4V1IEdpYWksIEJhIMSQw6xuaCwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1637568384633!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <div class="content">
-                <div class="item">
-                    <a href="index.html?kawasaki&0" class="slider-link">
-                        <div class="slider-img kawasaki">
-                            <div class="slider-content">
-                                <h3 class="slider-header">KAWASAKI</h3>
-                                <p class="slider-description">Xem thêm</p>
-                            </div>
-                        </div>
-                    </a>
-                    
+        
+            <h2>Liên Hệ Với Chung Tôi</h2>
+            <div class="wrapper row">
+                <div class="col-md-6 col-6 ">
+                    <h4>Thông Tin Liên Hệ</h4>
+                    <p class="p-content">
+                        Bạn hãy điền nội dung tin nhắn vào form dưới đây và gửi cho chúng tôi. Chúng tôi sẽ trả lời bạn sau khi nhận được.
+                    </p>
+                <form action="/index.html">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-sm-12">
+                        <label for="fname"></label>
+                        <input type="text" id="fname" name="first name" placeholder="Họ và Tên">
+                    </div>
+                    <div class="col-6 col-md-6 col-sm-12">
+                        <label for="pphone"></label>
+                        <input type="text" id="pphone" name="pphone" placeholder="Số điện thoại">
+                    </div>
+                    <div class="col-6 col-md-6 col-sm-12">
+                        <label for="pemail"></label>
+                        <input type="text" id="pemail" name="pemail" placeholder="Email">
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12">
+                        <label for="subject"></label>
+                        <textarea id="subject" name="subject" placeholder="Nội dung" style="height:120px"></textarea>
+                    </div>
+                    <input type="submit" value="Gửi tin nhắn">
+                 
                 </div>
-                <div class="item">
-                    <a href="index.html?honda&0" class="slider-link">
-                        <div class="slider-img honda">
-                            <div class="slider-content">
-                                <h3 class="slider-header">HONDA</h3>
-                                <p class="slider-description">Xem thêm</p>
+                </form>
+                </div>
+                <div class="col-md-6 col-6 ">
+                    <h6>SHOP MOTOR 2BMT</h6>
+                    <ul class="contact-page">
+                        <li class="contact-item">
+                            <div class="contac-icon">
+                                <i class="bx bxs-map">
+                                
+                                </i>
                             </div>
-                        </div>
-                    </a>   
+                            <p>
+                                Showroom 2BMT Motor 415 Phạm Văn Đồng, quận Thủ Đức, TP Hồ Chí Minh
+                            </p>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contac-icon">
+                                <i class="bx bxs-time-five">
+    
+                                </i>
+                            </div>
+                            <p>
+                                Giờ làm việc: Từ 9:00 đến 22:00 các ngày trong tuần từ Thứ 2 đến Chủ nhật
+                            </p>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contac-icon">
+                                <i class="bx bxs-phone">
+    
+                                </i>
+                            </div>
+                            <a   href="/">19006750</a>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contac-icon">
+                                <i class="bx bxs-envelope">
+                                
+                                </i>
+                            </div>
+                            <a href="/">support@2BMT.vn</a>
+                        </li>
+                        <li class="contact-item">
+                            <div class="contac-icon">
+                                <i class="bx bxs-link">
+                                
+                                </i>
+                            </div>
+                            <a href="./index.html" title="2BMTmotor">2BMTmotor.com</a>
+                        </li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+    
+    
+    
+        
+        <img class="intro-img intro-img-2" src="./assets/img/intro/img_3.jpg" alt="imt3">
+      
+    
+    
+        <div id="contact">
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-credit-card"></i></p>
+                    <span class="text">THANH TOÁN DỄ DÀNG VÀ BẢO MẬT</span>
                 </div>
             </div>
-
-            <div class="content">
-                <div class="item">
-                    <a href="index.html?yamaha&0" class="slider-link">
-
-                        <div class="slider-img yamaha">
-                            <div class="slider-content">
-                                <h3 class="slider-header">
-                                    YAMAHA
-                                </h3>
-                                <p class="slider-description">
-                                    Xem thêm
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="index.html?suzuki&0" class="slider-link">
-                        <div class="slider-img suzuki">
-                            <div class="slider-content">
-                                <h3 class="slider-header">
-                                    SUZUKI
-                                </h3>
-                                <p class="slider-description">
-                                    Xem thêm
-                                </p>
-                            </div> 
-                        </div>
-                    </a>
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-truck"></i></p>
+                    <span class="text">GIAO HÀNG ĐẢM BẢO TOÀN QUỐC</span>
                 </div>
             </div>
-            <div class="clear"></div>
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-headphone-alt"></i></p>
+                    <span class="text">HOT LINE 09095678
+                    <br> 10:00 - 19:00
+                </div>
+                </span>
+            </div>
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-briefcase"></i></p>
+                    <span class="text">CAM KẾT SẢN PHẨM CHÍNH HÃNG</span>
+                </div>
+            </div>
         </div>
 
-
         
-        
-        <!-- --------------------------CONTENT----------------------- -->
-
-        <div id="main">
-            <div class="container" id="maincontent">
-                <div class="ttt-1 text-center">sản phẩm</div>
-                <div id="product">
-                    <!-- Product -->
-                </div>
-                <div id="productInfo" class="modal js-modal">
-                    <div id="info">
-                        <button type="button" class="close" onClick="closeProductInfo()">+</button>
-                        <div class="left">
-                            <img id="imgbig" src="">
-                        </div>
-                        <div class="right">
-                            <h2 id="productname"></h2>  
-                            
-                            <h4 id="productprice"></h4>
-                            <h4>PHIÊN BẢN</h4>
-                            <select id="version">
-                                <!-- <option value="choose" selected>Chọn phiên bản</option> -->
-                                <option value="non-abs" selected>Phiên bản thường không abs</option>
-                                <option value="abs">Phiên bản có abs</option>
-                                <option value="special">Bản đặc biệt(bao gồm abs + ga điện tử)</option>
-                            </select>
-                            <h4>Số lượng</h4>
-                            <button class="quantitydown" onClick="quantityDown()">-</button><input type="text" id="quantity" value="1"><button class="quantityup" onClick="quantityUp()">+</button>
-                            <button class="addtocart" onclick="addToCart()">Thêm vào giỏ</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="page"></div>
-            </div>
-        </div>  
-
-      
-        <div id="service">
-            <div class="service-background">
-                <div class="service-col">
-                    <div class="service-left"></div>
-                    <div class="service-right">
-                        <div class="service-content">
-                            <div class="service-header">DỊCH VỤ CỦA 2BMT MOTOR</div>
-                            <div class="line-section"></div>
-                            <div class="service-box">
-                                <p class="service-description">2BMT MOTOR là nơi phân phối hơn 16 siêu phẩm motor đến từ Kawasaki - thương hiệu motor hàng đầu thế giới. Nhằm đem lại những dịch vụ tốt nhất đến khách hàng như :</p>
-                                <div class="service-list">
-                                    <ul>
-                                        <li>Dịch vụ cứu hộ xe pkl 24/24.</li>
-                                        <li>Bọc carbon fiber cho tất cả các chi tiết xe.</li>
-                                        <li>Lên Cafe Racer, Tracker, Cruiser, Bobber</li>
-                                        <li>Nhận phục hồi tất cả các xe tai nạn PKL.</li>
-                                        <li>Nhận phục hồi tất cả các xe tai nạn PKL.</li>
-                                        <li>Nhận Design, độ chế tân trang, sửa chữa xe PKL</li>
-                                        <li>Đồ chơi xe mô tô: Phuộc Upside Down, Pô độ xe PKL, Móc Pô cho các dòng xe PKL</li>
-                                        <li>Xử lý, sữa chữa tất cả khung sườn, chảng 3</li>
-                                        <li>Cung cấp đồ chơi, linh kiện, phụ kiện chính hãng.</li>
-                                        <li>Cung Cấp Sỉ Lẻ Các Loại Tem Xe</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
-
-        <!-- footer -->
+    
         <div id="footer">
             <div class="wrap-main">
                 <div class="row-listRow">
@@ -419,7 +445,6 @@
                 </div>
             </div>
         </div>
-        <!-- end footer -->
         <div id="customalert"></div>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="./js/scripts.js"></script>

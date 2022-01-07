@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font-icon/themify-icons/themify-icons.css">
+    <title>2BMT MOTOR</title>
+</head>
+    <body onLoad="showMenu();showProduct();checkLogin();">
+
+        <header class="header">
+            <nav class="navbar">
+                <ul id="navbar-list-top">
+                </ul>
+
+                <ul id="navbar-list-bottom">
+                    
+                    <li class="navbar-item2"><button onclick="showFormLogin()" class="login" href="">ĐĂNG NHẬP</button></li>
+                    <li class="navbar-item2"><button onclick="showFormSignUp()" class="register" href="">ĐĂNG KÝ</button></li>
+                    <li class="navbar-item2"><a class="shopping" href="./admin/cart.html">GIỎ HÀNG <i style="font-size: 14px;" class="fas fa-shopping-cart"></i></a></li>
+                    <li class="navbar-item2"><a class="search-icon search-btn" onClick="showSearch()"><i style="font-size: 20px;" class="fas fa-search"></i></a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        
+        <!------------------------------------------------- MODAL-------------------------------------------------- -->
+        <div id="user" class="modal">
+        
+        <!--------------------------------------------- LOGIN ----------------------------------------------------- -->
+            <div id="login">
+                <form id="loginform">
+                    <button type="button" class="close" onClick="closeForm()">+</button>
+                    <h2>ĐĂNG NHẬP</h2>
+                    <div class="logininfo">
+                        <div class="col">
+                            <label for="usernameLogin">Tên đăng nhập:</label>
+                            <input type="text" id="usernameLogin">
+                            <div id="usernameerror">Bạn chưa nhập tên đăng nhập</div>
+                            <label for="passwordLogin">Mật khẩu:</label>
+                            <input type="password" id="passwordLogin">
+                            <div id="passwordloginerror">Bạn chưa nhập mật khẩu</div>
+                        </div>
+                    </div>
+                    <button type="submit" id="btnlogin">Login</button>
+                    <p>Bạn chưa có tài khoản? <a href="#" onClick="showSignUp()">Đăng ký</a></p>
+                    <div class="auth-social">
+                        <a href="https://facebook.com" class="social-btn btn-facebook">
+                            <i class="social-icon fab fa-facebook"></i>
+                            <span class="social-title facebook-title">
+                            Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="https://google.com" class="social-btn btn-google">
+                            <i class="social-icon fab fa-google"></i>
+                            <span class="social-title google-title">
+                            Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        <!--------------------------------------- SIGN UP ------------------------------------------------------------>
+            <div id="signup">
+                <form id="signupform">
+                    <button type="button" class="close" onClick="closeForm()">+</button>
+                    <h2>ĐĂNG KÝ</h2>
+                    <div class="signupinfo">
+                        <div class="col">
+                            <label for="fullname">Họ và tên: </label>
+                            <input type="text" id="fullname">
+                            <div id="fullnameerror">Bạn chưa nhập họ tên</div>
+                            <label for="address">Địa chỉ: </label>
+                            <input type="text" id="address">
+                            <div id="addresserror">Bạn chưa địa chỉ</div>
+                            <label for="phone">Số điện thoại: </label>
+                            <input type="text" id="phone">
+                            <div id="phoneerror">Bạn chưa nhập số điện thoại</div>
+                        </div>
+                        <div class="col">
+                            <label for="usernameSignUp">Tên đăng nhập: </label>
+                            <input type="text" id="usernameSignUp">
+                            <div id="usererror">Bạn chưa nhập tên đăng nhập</div>
+                            <label for="passwordSignUp">Mật khẩu: </label>
+                            <input type="password" id="passwordSignUp">
+                            <div id="passworderror">Bạn chưa nhập mật khẩu</div>
+                            <label for="passwordSignUp2">Nhập lại mật khẩu: </label>
+                            <input type="password" id="passwordSignUp2">
+                            <div id="password2error">Mật khẩu nhập lại phải trùng với mật khẩu</div>
+                        </div>
+                        <!-- policy -->
+                        <div class="auth-more">
+                            <p class="auth-policy-text">
+                                Bằng việc đăng ký tài khoản, bạn đã đồng ý với 2BMT MOTOR về
+                                <a class="auth-policy-link" href="">Điều khoản dịch vụ</a> và
+                                <a href="" class="auth-policy-link">Chính sách bảo mật</a>.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- auth control -->
+                    <button type="submit" id="btnsignup">Đăng ký</button>
+                    <p>Trở về trang <a href="#" onClick="showLogin()">Đăng nhập</a></p>
+                    <!-- social -->
+                    <div class="auth-social">
+                        <a href="https://facebook.com" class=" social-btn btn-facebook">
+                            <i class="social-icon fab fa-facebook"></i>
+                            <span class="social-title facebook-title">
+                            Kết nối với Facebook
+                            </span>
+                        </a>
+                        <a href="https://google.com" class=" social-btn btn-google">
+                            <i class="social-icon fab fa-google"></i>
+                            <span class="social-title google-title">
+                            Kết nối với Google
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+<!----------------------SEARCH SECTION BEGIN ---------------------------->
+        <div id="searchsection">
+            <div class="container">
+                <div class="close" onClick="closeSearch()">+</div>
+                <div class="searchbox">
+                    <input type="text" placeholder="Tìm kiếm" id="search" onKeyUp="search()"><button onClick="showExtend()"><img src="./assets/img/icon/arrow.svg"></button>
+                </div>
+                <div id="searchextend" class="">
+                    <div>
+                        <select id="brandsearch" onchange="search()">
+                            <option value="all" selected>TẤT CẢ</option>
+                            <option value="honda">HONDA</option>
+                            <option value="yamaha">YAMAHA</option>
+                            <option value="suzuki">SUZUKI</option>
+                            <option value="kawasaki">KAWASAKI</option>
+                        </select>
+                    </div>
+                    <div> <input type="text" id="priceform" onchange="search()" placeholder="Giá từ"> &mdash; <input type="text" id="priceto" onchange="search()" placeholder="Đến"></div>
+                </div>
+                <div id="searchresult"></div>
+            </div>
+        </div>
+
+    <!------------------------SEARCH SECTION END --------------------------->
+
+
+        <!-- Modal introduce -->
+      <div class="modal-introduce">
+        <form action="">
+
+            <div class="intro-header">
+                <h1>VỀ SHOWROOM 2BMT MOTOR</h1>
+            </div>
+            <div class="form-wrapper">
+                
+                
+                <div class="intro-content">
+                    <p>Bạn đang tìm cửa hàng mua bán mô tô ở Sài Gòn uy tín và chất lượng? Hay bạn chưa biết đại lý xe mô tô PKL Hà Nội nào có nhiều mẫu xe đẹp?</p>
+
+                        <p>Hãy đến ngay:</p>
+                        </p>
+                        <ul>
+                            <li><p>Showroom 2BMT Motor L/K 21/3, KĐTM Văn Khê, P. La Khê, Q. Hà Đông, Hà Nội.</p></li>
+                            <li><p>Showroom 2BMT Motor 415 Phạm Văn Đồng, quận Thủ Đức, TP Hồ Chí Minh</p></li>
+                        
+                        </ul>
+                        <p>
+                        Tại các showroom 2BMT Motor có đầy đủ các dòng xe mô tô phân khối lớn sành điệu, kiểu dáng bắt mắt, màu sắc phong phú ưu nhìn, động cơ thiết kế mạnh mẽ tích hợp những công nghệ tiên tiến nhất như phun xăng điện tử tiết kiệm xăng, đèn Led, màn hình LCD, phuộc USD…</p>
+                    <p>Các dòng xe mô tô thể thao phong phú của các hãng nổi tiếng Honda, Yamaha, Suzuki, Kawasaki…có nhiều sự lựa chọn cho người chơi xe thể thao. Với rất nhiều dịch vụ hỗ trợ khách hàng, 2BMT Motor tự tin khẳng định mình là cửa hàng xe PKL, xe mô tô nhập khẩu UY TÍN và CHẤT LƯỢNG NHẤT VIỆT NAM.</p>
+                    <img class="intro-img" src="./assets/img/intro/img_1.jpg" alt="img1">
+                    <p>? HỖ TRỢ TƯ VẤN TRẢ GÓP GỌI NGAY:</p>
+                        <p>✴️TRẢ GÓP Sài Gòn: 0123456678</p>
+                        <p>✴️TRẢ GÓP Hà Nội : 0123456789</p>
+                        <p>✔️Lãi suất cực thấp, thủ tục đơn giản.</p>
+                        <p>✔️Lấy xe ngay, chỉ trong 10 phút.</p>
+                        <p>✔️Hỗ trợ trả góp 64 tỉnh thành.</p>
+                        <p>- Chế độ bảo hành IC 3 năm, Bảo trì TẠI HỆ THỐNG SHOWROOM 2BMT MOTOR TRÊN TOÀN QUỐC</p>
+                        <p>❄️ Hỗ trợ giao xe tận nhà</p>
+                        <p>❄️ Hỗ trợ bằng lái A2</p>
+                        <p>❄️ Hỗ trợ Đăng Ký Toàn Quốc</p>
+                        <p>❄️ Dịch vụ Sửa Chữa & độ chế xe mô tô tại nhà theo yêu cầu của quý khách !</p>
+                        <p>♐️ TRUNG TÂM BẢO HÀNH – SỬA CHỮA TÂN TRANG XE PKL 2BMT MOTOR</p>
+                        <p>- Chúng tôi không cạnh tranh về giá ?</p>
+                        <p>- Chúng tôi luôn cạnh tranh “CHẤT LƯỢNG & DỊCH VỤ”</p>
+                        <p>- Áp dụng chính sách BẢO HÀNH lên đến 3 năm ?</p>
+                        <p>♐️ Áp dụng Dich vụ 3S tại 2BMT MOTOR:</p>
+                        <p>- Dịch vụ Bán hàng.</p>
+                        <p>- Dich vụ chăm sóc sửa chữa tân trang xe PKL.</p>
+                        <p>- Linh kiện phụ kiện chính hãng.</p>
+                    <img class="intro-img intro-img-2" src="./assets/img/intro/imt_2.jpg" alt="img2">
+                    <p>Chúng tôi tân tâm mang đến một môi trường làm việc thân thiện và chuyên nghiệp cho từng nhân
+                        viên, nỗ lực
+                        hoàn thiện giá trị “Cùng nhau hướng đến một 2BMT TUYỆT VỜI!”
+                    </p>
+                </div>   
+
+            </div>
+        </form>
+      </div>
+
+        
+        <div id="contact">
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-credit-card"></i></p>
+                    <span class="text">THANH TOÁN DỄ DÀNG VÀ BẢO MẬT</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-truck"></i></p>
+                    <span class="text">GIAO HÀNG ĐẢM BẢO TOÀN QUỐC</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-headphone-alt"></i></p>
+                    <span class="text">HOT LINE 09095678
+                    <br> 10:00 - 19:00
+                </div>
+                </span>
+            </div>
+            <div class="item">
+                <div class="item-content">
+                    <p><i class ="ti-briefcase"></i></p>
+                    <span class="text">CAM KẾT SẢN PHẨM CHÍNH HÃNG</span>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------intro----------------------- -->
+
+        
+
+      
+        
+
+
+        <div id="footer">
+            <div class="wrap-main">
+                <div class="row-listRow">
+                    <div class="pay">
+                        <ul>
+                            <li class="tt">PHƯƠNG THỨC THANH TOÁN</li>
+                            <li class="img-pay">
+                            <img src="./assets/img/contact/ic_visa.jpg" alt="visa">
+                            <img src="./assets/img/contact/ic_mscard.jpg" alt="mscard">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ketnoi">
+                        <ul>
+                            <li class="tt">KẾT NỐI VỚI CHÚNG TÔI</li>
+                            <li class="img-ketnoi">
+                                <img src="./assets/img/contact/ic_fb2.jpg" alt="facebook" >
+                                <img src="./assets/img/contact/ic_insta2.jpg" alt="insta">
+                                <img src="./assets/img/contact/ic_youtube1.jpg" alt="youtube" >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tintuc">
+                        <li class="tt">NHẬN BẢN TIN</li>
+                        <li>
+                            <div class="from-group">
+                                <input type="email" placeholder="Vui lòng nhập email của bạn" class="form-control">
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="customalert"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="./js/scripts.js"></script>
+    </body>
+</html>
